@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Commons functions for Iconic
+ */
+
+function iconic_commons_entity_info_alter(&$entity_info){
+  $entity_info['node']['view modes']['sidebar_teaser'] = array(
+    'label' => t('Sidebar Teaser'),
+    'custom settings' => TRUE,
+  );
+}
