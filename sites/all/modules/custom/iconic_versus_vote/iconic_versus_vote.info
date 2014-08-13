@@ -1,0 +1,8 @@
+name = Iconic Versus Vote
+description = Commons functions for Versus Vote.
+package = Iconic
+core = 7.x
+php = 5.2
+
+version = "7.x-1.0"
+project = "iconic_versus_vote"

@@ -38,7 +38,7 @@
 		color: #777;
 	}
 
-	h1,h2,h3,h4,h5,h6
+	h1,h2,h3,h4,h5,h6,span.attributes
 	{
 		font-weight: 600;
 		text-transform: uppercase;
@@ -871,6 +871,18 @@
 	{
 		border-top: solid 2px #e5e5e5;
 		text-align: center;
+	}
+
+/*********************************************************************************/
+/* Watch                                                                     */
+/*********************************************************************************/
+
+	.versus header {
+		text-align: center;
+	}
+
+	.watch-attributes-wrapper {
+		clear: both;
 	}
 
 /*********************************************************************************/
