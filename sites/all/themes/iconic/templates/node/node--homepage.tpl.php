@@ -17,6 +17,9 @@
   <!-- Sidebar -->
   <div id="sidebar" class="4u">
     <?php print render($content['field_articles_sidebar']); ?>
+    <section class="ad">
+      <a href=""><img src="images/ad.jpg" width="355" height="355" alt="" /></a>
+    </section>
   </div>
 
 </div>
