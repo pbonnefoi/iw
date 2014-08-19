@@ -7,9 +7,7 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
-<!-- Post -->
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
   <header>
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -23,16 +21,21 @@
     <?php endif; ?>
   </header>
 
-  <a href="#" class="image featured">
-    <?php print render($content['field_image']); ?>
-  </a>
+  <ul class="versus clearfix">
 
-  <h3><?php print render($content['field_subtitle']); ?></h3>
+    <li class="6u versus-left">
+      <?php print render($content['field_watch']); ?>
+    </li>
 
-  <?php print render($content['body']); ?>
+    <!-- Sidebar -->
+    <li class="6u versus-right">
+      <?php print render($content['field_versus_watch']); ?>
+    </li>
 
-  <ul class="actions">
-    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn More'); ?></a></li>
   </ul>
 
+
+  <ul class="actions">
+    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-compress"><?php print t('Learn More'); ?></a></li>
+  </ul>
 </article>

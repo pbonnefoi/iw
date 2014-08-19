@@ -13,12 +13,9 @@
   <header>
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-    <?php endif; ?>
-
-    <?php if ($display_submitted): ?>
-      <p class="submitted">
-        <?php print format_date($node->changed); ?>
-      </p>
+      <?php if ($display_submitted): ?>
+        <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
+      <?php endif; ?>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>

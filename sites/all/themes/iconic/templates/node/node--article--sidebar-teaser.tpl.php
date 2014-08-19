@@ -12,14 +12,8 @@
 
   <header>
     <?php if ($title): ?>
-      <span class="date"><?php print format_date($node->changed); ?></span>
       <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-    <?php endif; ?>
-
-    <?php if ($display_submitted): ?>
-      <p class="submitted">
-        <?php print format_date($node->changed); ?>
-      </p>
+      <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>
@@ -27,8 +21,12 @@
     <?php endif; ?>
   </header>
 
-  <a href="#" class="image featured">
+  <a href="<?php print url('node/' . $node->nid); ?>" class="image featured">
     <?php print render($content['field_image']); ?>
   </a>
+
+  <ul class="actions">
+    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn More'); ?></a></li>
+  </ul>
 
 </article>

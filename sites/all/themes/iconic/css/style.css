@@ -38,7 +38,7 @@
 		color: #777;
 	}
 
-	h1,h2,h3,h4,h5,h6,span.attributes
+	h1,h2,h3,h4,h5,h6,.attributes span
 	{
 		font-weight: 600;
 		text-transform: uppercase;
@@ -75,13 +75,13 @@
 
 		a:hover
 		{
-			color: #ed786a;
+			color: #000000;
 			border-bottom-color: rgba(255,255,255,0);
 		}
 
 		a:hover strong
 		{
-			color: #ed786a;
+			color: #000000;
 		}
 
 	strong, b
@@ -195,6 +195,17 @@
 				margin: 0 0 3.5em 0;
 			}
 
+			.sidebar-content .image.featured
+			{
+				display: block;
+				width: 100%;
+				margin: 0 0 0 0;
+			}
+
+			.sidebar-content h2 {
+				margin: 0 0 0.5em 0;
+			}
+
 			.image.left
 			{
 				float: left;
@@ -260,24 +271,31 @@
 
 			ul.actions
 			{
-				margin-top: 2.5em;
+				margin-top: 1.25em;
 				clear: both;
 			}
 
-			ul.divided
+			ul.divided,
+			div.divided
 			{
 			}
 
-				ul.divided li
+				ul.divided li,
+				div.divided li
 				{
 					border-top: solid 2px #e5e5e5;
 				}
 
-				ul.divided li:first-child
+				ul.divided li:first-child,
+				div.divided li:first-child
 				{
 					border-top: 0;
 					margin-top: 0;
 					padding-top: 0;
+				}
+
+				ul.versus li {
+					border-top: none;
 				}
 
 			ul.icons
@@ -288,6 +306,7 @@
 				{
 					position: relative;
 					padding: 2em 0 0 3em;
+					border: none;
 				}
 
 				ul.icons > li:before
@@ -483,7 +502,7 @@
 			-webkit-appearance: none;
 			position: relative;
 			display: inline-block;
-			background: #ed786a;
+			background: #000000;
 			color: #fff !important;
 			text-transform: uppercase;
 			border-radius: 4px;
@@ -513,7 +532,7 @@
 			input[type="reset"]:hover,
 			.button:hover
 			{
-				background: #fd887a;
+				background: #878787;
 			}
 
 			input[type="button"]:active,
@@ -521,7 +540,7 @@
 			input[type="reset"]:active,
 			.button:active
 			{
-				background: #ed786a;
+				background: #000000;
 			}
 
 			input[type="button"].alt,
@@ -560,13 +579,10 @@
 
 				.box.excerpt .date
 				{
-					background: #878787;
-					color: #fff;
+					color: #878787;
 					font-weight: 400;
 					text-transform: uppercase;
-					border-radius: 4px;
-					border: 0;
-					box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
+					border-bottom: solid 2px #878787;
 				}
 
 /*********************************************************************************/
@@ -781,14 +797,14 @@
 					#nav > ul > li.active > a:before,
 					#nav > ul > li:hover > a:before
 					{
-						background: #ED786A;
+						background: #000000;
 						color: #fff;
 					}
 
 					#nav > ul > li.active > a > span,
 					#nav > ul > li:hover > a > span
 					{
-						color: #ED786A;
+						color: #000000;
 					}
 
 /*********************************************************************************/
@@ -863,6 +879,18 @@
 				box-shadow: none;
 			}
 
+			#sidebar .actions {
+				text-align: center;
+			}
+
+			#sidebar ul.versus li {
+				display: block;
+				float: left;
+				padding-right: 0.50em;
+				/*display: inline-block;*/
+				vertical-align: top;
+			}
+
 /*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/
@@ -874,7 +902,7 @@
 	}
 
 /*********************************************************************************/
-/* Watch                                                                     */
+/* Watch                                                                         */
 /*********************************************************************************/
 
 	.versus header {
@@ -886,7 +914,27 @@
 	}
 
 /*********************************************************************************/
-/* Admin                                                                     */
+/* Brand                                                                         */
+/*********************************************************************************/
+
+	.brand {
+		vertical-align: top;
+		text-align: center;
+	}
+
+			.brand .image img {
+				filter: alpha(opactiy=60);
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+				opacity: 0.6;
+				-webkit-transition: opacity 150ms ease-in-out;
+				-moz-transition: opacity 150ms ease-in-out;
+				-ms-transition: opacity 150ms ease-in-out;
+				-o-transition: opacity 150ms ease-in-out;
+				transition: opacity 150ms ease-in-out;
+			}
+
+/*********************************************************************************/
+/* Admin                                                                         */
 /*********************************************************************************/
 
 	ul.tabs li {

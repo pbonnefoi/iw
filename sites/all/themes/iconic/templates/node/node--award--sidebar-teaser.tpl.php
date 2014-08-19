@@ -7,12 +7,10 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
-<!-- Post -->
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?> - <?php print render($content['field_watch_reference']); ?></a></h2>
       <?php if ($display_submitted): ?>
         <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
       <?php endif; ?>
@@ -23,16 +21,6 @@
     <?php endif; ?>
   </header>
 
-  <a href="#" class="image featured">
-    <?php print render($content['field_image']); ?>
-  </a>
-
-  <h3><?php print render($content['field_subtitle']); ?></h3>
-
-  <?php print render($content['body']); ?>
-
-  <ul class="actions">
-    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn More'); ?></a></li>
-  </ul>
+  <?php print render($content['field_watch']); ?>
 
 </article>

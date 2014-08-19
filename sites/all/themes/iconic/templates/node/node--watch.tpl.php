@@ -10,22 +10,30 @@
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-    <?php endif; ?>
-
-    <?php if ($display_submitted): ?>
-      <p class="submitted">
-        <?php print format_date($node->changed); ?>
-      </p>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?> - <?php print render($content['field_watch_reference']); ?></a></h2>
+      <?php if ($display_submitted): ?>
+        <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
+      <?php endif; ?>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
     <?php endif; ?>
   </header>
-  <div class="watch-attributes-wrapper">
-    <span class="image featured"><?php print render($content['field_watch_picture']); ?></span>
-    <span class="attributes"><?php print t('Water Resistant') ?> : </span><?php print render($content['field_water_resistant']); ?>
-    <span class="attributes"><?php print t('Price used') ?> : </span><?php print render($content['field_price_used_low']); ?> / <?php print render($content['field_price_used_high']); ?>
+  <div class="watch-attributes-wrapper row">
+    <div class="7u">
+      <span class="image featured"><?php print render($content['field_watch_picture']); ?></span>
+    </div>
+    <div class="5u">
+      <ul class="attributes icons">
+        <li class="icon fa-cube"><span><?php print t('brand') ?> : </span><?php print render($content['field_brand']); ?></li>
+        <li class="icon fa-tag"><span><?php print t('Reference') ?> : </span><?php print render($content['field_watch_reference']); ?></li>
+        <li class="icon fa-cog"><span><?php print t('Caliber') ?> : </span><?php print render($content['field_caliber']); ?></li>
+        <li class="icon fa-arrows-h"><span><?php print t('Diameter') ?> : </span><?php print render($content['field_diameter']); ?></li>
+        <li class="icon fa-tint"><span><?php print t('Water Resistant') ?> : </span><?php print render($content['field_water_resistant']); ?></li>
+        <li class="icon fa-calendar"><span><?php print t('Production Date') ?> : </span><?php print render($content['field_production_year']); ?></li>
+        <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_used_low']); ?> / <?php print render($content['field_price_used_high']); ?></li>
+      </ul>
+    </div>
   </div>
 </article>
