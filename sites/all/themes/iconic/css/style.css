@@ -325,6 +325,41 @@
 					box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
 				}
 
+				.trophy span
+				{
+					position: relative;
+					padding: 2em 0 0 2em;
+					border: none;
+					color: #e5c100;
+				}
+
+				.trophy span:before
+				{
+					position: absolute;
+					left: 0;
+					top: 2em;
+					display: block;
+					background: #ffef99;
+					width: 1.65em;
+					height: 1.65em;
+					border-radius: 1.65em;
+					line-height: 1.65em;
+					text-align: center;
+					box-shadow: 0.125em 0.175em 0 0 rgba(255,215,0,0.125);
+				}
+
+				.trophy span.date-display-single {
+					padding: 0;
+					background: #ffef99;
+					font-weight: 400;
+					text-transform: uppercase;
+					border-radius: 4px;
+					border: 0;
+					box-shadow: 0.125em 0.175em 0 0 rgba(255,215,0,0.125);
+					letter-spacing: 2px;
+					padding: 0.25em 0.25em 0.25em 0.25em;
+				}
+
 				ul.icons > li:first-child
 				{
 					padding-top: 0;
@@ -932,6 +967,18 @@
 				-o-transition: opacity 150ms ease-in-out;
 				transition: opacity 150ms ease-in-out;
 			}
+
+/*********************************************************************************/
+/* Brand                                                                         */
+/*********************************************************************************/
+
+	.trophy {
+		font-size: 2em;
+		font-weight: 400;
+		letter-spacing: 4px;
+		margin: 0 0 1.5em 0;
+		line-height: 1.75em;
+	}
 
 /*********************************************************************************/
 /* Admin                                                                         */
