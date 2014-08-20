@@ -78,23 +78,29 @@
   <div id="footer" class="container">
     <section>
       <div class="row">
-        <!-- Nav -->
-        <ul class="icons 4u">
-          <?php foreach ($main_menu as $key => $menu_item): ?>
-            <li <?php print isset($menu_item['link']['options']['attributes']) ? drupal_attributes($menu_item['link']['options']['attributes']) : ''; ?>><a href="<?php print url($menu_item['link']['link_path']); ?>"><span><?php print $menu_item['link']['link_title']; ?></span></a></li>
-          <?php endforeach; ?>
-        </ul>
-        <ul class="icons 4u">
-          <li class="icon fa-clock-o"><a href=""><span><?php print t('3 Hands'); ?></span></a></li>
-          <li class="icon fa-anchor"><a href=""><span><?php print t('Divers'); ?></span></a></li>
-          <li class="icon fa-paper-plane"><a href=""><span><?php print t('Chronographs'); ?></span></a></li>
-        </ul>
-        <ul class="icons 4u">
-          <li class="icon fa-twitter"><a href=""><span><?php print t('Twitter'); ?></span></a></li>
-          <li class="icon fa-facebook"><a href=""><span><?php print t('Facebook'); ?></span></a></li>
-          <li class="icon fa-pinterest"><a href=""><span><?php print t('Pinterest'); ?></span></a></li>
-          <li class="icon fa-google-plus"><a href=""><span><?php print t('Google+'); ?></span></a></li>
-        </ul>
+        <div class="8u">
+          <div class="row">
+            <!-- Nav -->
+            <ul class="icons 4u">
+              <?php foreach ($main_menu as $key => $menu_item): ?>
+                <li <?php print isset($menu_item['link']['options']['attributes']) ? drupal_attributes($menu_item['link']['options']['attributes']) : ''; ?>><a href="<?php print url($menu_item['link']['link_path']); ?>"><span><?php print $menu_item['link']['link_title']; ?></span></a></li>
+              <?php endforeach; ?>
+            </ul>
+            <ul class="icons 4u">
+              <li class="icon fa-clock-o"><a href=""><span><?php print t('3 Hands'); ?></span></a></li>
+              <li class="icon fa-anchor"><a href=""><span><?php print t('Divers'); ?></span></a></li>
+              <li class="icon fa-paper-plane"><a href=""><span><?php print t('Chronographs'); ?></span></a></li>
+            </ul>
+            <ul class="icons 4u">
+              <li class="icon twitter fa-twitter"><a href=""><span><?php print t('Twitter'); ?></span></a></li>
+              <li class="icon facebook fa-facebook"><a href=""><span><?php print t('Facebook'); ?></span></a></li>
+              <li class="icon pinterest fa-pinterest"><a href=""><span><?php print t('Pinterest'); ?></span></a></li>
+              <li class="icon google-plus fa-google-plus"><a href=""><span><?php print t('Google+'); ?></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="4u">
+        </div>
       </div>
     </section>
   </div>

@@ -10,3 +10,23 @@ function iconic_commons_entity_info_alter(&$entity_info){
     'custom settings' => TRUE,
   );
 }
+
+
+function iconic_commons_form_alter(&$form, $form_state, $form_id) {
+  if (in_array($form_id, array('poll_view_voting', 'poll_cancel_form'))) {
+    $form['#prefix'] = '<div id="iconic-commons-votes">';
+    $form['#suffix'] = '</div>';
+    $form['vote']['#ajax'] = array(
+      'callback' => 'iconic_commons_poll_vote_js',
+      'wrapper' => 'iconic-commons-votes',
+      'method' => 'replace',
+      'effect' => 'fade',
+    );
+    $form['vote']['#ajax']['progress']['type'] = 'none';
+  }
+}
+
+function iconic_commons_poll_vote_js($form, $form_state) {
+  $results = poll_view_results($form['#node'], 'full', $block = FALSE);
+  return $results;
+}

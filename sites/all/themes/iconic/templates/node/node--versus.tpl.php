@@ -30,12 +30,42 @@
     <!-- Content -->
     <div id="versus versus-left" class="6u">
       <?php print render($content['field_watch']); ?>
+      <?php if ($pros_left): ?>
+        <ul class="icons">
+          <?php foreach ($pros_left as $key => $pl): ?>
+            <li class="icon fa-plus"><?php print render($pl); ?></li>
+          <?php endforeach ?>
+        </ul>
+      <?php endif ?>
+      <?php if ($cons_left): ?>
+        <ul class="icons">
+          <?php foreach ($cons_left as $key => $cl): ?>
+            <li class="icon fa-minus"><?php print render($cl); ?></li>
+          <?php endforeach ?>
+        </ul>
+      <?php endif ?>
     </div>
 
     <!-- Sidebar -->
     <div id="versus versus-right" class="6u">
       <?php print render($content['field_versus_watch']); ?>
+      <?php if ($pros_right): ?>
+        <ul class="icons">
+          <?php foreach ($pros_right as $key => $pr): ?>
+            <li class="icon fa-plus"><?php print render($pr); ?></li>
+          <?php endforeach ?>
+        </ul>
+      <?php endif ?>
+      <?php if ($cons_right): ?>
+        <ul class="icons">
+          <?php foreach ($cons_right as $key => $cr): ?>
+            <li class="icon fa-minus"><?php print render($cr); ?></li>
+          <?php endforeach ?>
+        </ul>
+      <?php endif ?>
     </div>
 
   </div>
+
+  <?php print render($content['field_versus_poll']); ?>
 </div>

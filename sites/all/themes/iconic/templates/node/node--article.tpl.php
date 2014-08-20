@@ -31,4 +31,6 @@
 
   <?php print render($content['body']); ?>
 
+  <?php print render($content['links']); ?>
+
 </article>
