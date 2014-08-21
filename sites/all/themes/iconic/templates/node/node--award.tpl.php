@@ -16,6 +16,22 @@
         <span class="icon fa-anchor <?php print '' ?>"></span>
       </div>
       <h2><a href="<?php print $node_url; ?>"><?php print t('The') ?> <?php print $title; ?> - <?php print render($content['field_watch_reference']); ?> <?php print render($content['field_date_award']); ?> <?php print render($content['field_award_category']); ?> <?php print variable_get('site_name', t('Iconic Watch.')) . ' ' . t('award'); ?></a></h2>
+      <ul class="links inline social-sharing">
+        <?php if ($display_submitted): ?>
+          <li class="date">
+            <?php print format_date($node->changed, 'short'); ?>
+          </li>
+        <?php endif; ?>
+        <li class="pinit-button">
+          <?php print render($content['links']); ?>
+        </li>
+        <li class="facebook-button">
+          <?php print render($content['facebookshare']); ?>
+        </li>
+        <li class="tweet-button">
+          <?php print render($content['field_tweet_button']); ?>
+        </li>
+      </ul>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>

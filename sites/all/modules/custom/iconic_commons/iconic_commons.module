@@ -24,6 +24,12 @@ function iconic_commons_form_alter(&$form, $form_state, $form_id) {
     );
     $form['vote']['#ajax']['progress']['type'] = 'none';
   }
+  elseif ($form_id == 'simplenews_block_form_22') {
+    if (isset($form['mail']['#title'])) {
+      $form['mail']['#attributes']['placeholder'] = $form['mail']['#title'];
+    }
+    $form['mail']['#title_display'] = 'invisible';
+  }
 }
 
 function iconic_commons_poll_vote_js($form, $form_state) {

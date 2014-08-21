@@ -129,7 +129,7 @@
 
 	p, ul, ol, dl, table, blockquote
 	{
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 
 	br.clear
@@ -261,7 +261,40 @@
 					border-left: solid 1px #d0d0d0;
 					padding-left: 1em;
 					margin-left: 1em;
+					height: 31px;
 				}
+
+			ul.social-sharing
+			{
+				margin: 1em 0 1em 0;
+				vertical-align: top;
+				height: 31px;
+			}
+
+				ul.social-sharing li
+				{
+					display: block;
+					float: left;
+					margin-right: 3px;
+					border-left: none;
+					padding-left: 0;
+					margin-left: 0;
+					margin-right: 0.5em;
+					text-align: center;
+					padding-top: 3px;
+				}
+
+				ul.social-sharing li.date
+				{
+					width: 78px;
+					text-align: left;
+					padding-top: 0;
+				}
+
+					ul.social-sharing li a
+					{
+						border-bottom: none;
+					}
 
 				ul.links li:first-child
 				{
@@ -1026,6 +1059,15 @@
 		background: #dd4b39 !important;
 	}
 
+	.facebookshare-box {
+		float: none !important;
+		clear: none !important;
+	}
+
+	.facebookshare-box .fb-share-button span {
+		vertical-align: top !important;
+	}
+
 /*********************************************************************************/
 /* Poll                                                                          */
 /*********************************************************************************/
@@ -1055,6 +1097,10 @@
 /*********************************************************************************/
 /* Form                                                                          */
 /*********************************************************************************/
+
+	.form-item {
+		margin-bottom: 1em;
+	}
 
 	.form-type-radios {
 		width: 100%;

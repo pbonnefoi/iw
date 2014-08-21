@@ -57,8 +57,12 @@
           <?php print views_embed_view('brands', 'block'); ?>
         </section>
 
+        <section class="sidebar-content">
+          <?php print render($simplenews_block); ?>
+        </section>
+
         <section class="ad">
-          <a href=""><img src="images/ad.jpg" width="355" height="355" alt="" /></a>
+          <a href="" class="image"><img src="/sites/all/themes/iconic/images/small_ad.png" width="355" height="355" alt="" /></a>
         </section>
 
         <section class="sidebar-content">
@@ -92,9 +96,9 @@
               <li class="icon fa-paper-plane"><a href=""><span><?php print t('Chronographs'); ?></span></a></li>
             </ul>
             <ul class="icons 4u">
-              <li class="icon twitter fa-twitter"><a href=""><span><?php print t('Twitter'); ?></span></a></li>
+              <li class="icon twitter fa-twitter"><a href="https://twitter.com/Iconic_Watches"><span><?php print t('Twitter'); ?></span></a></li>
               <li class="icon facebook fa-facebook"><a href=""><span><?php print t('Facebook'); ?></span></a></li>
-              <li class="icon pinterest fa-pinterest"><a href=""><span><?php print t('Pinterest'); ?></span></a></li>
+              <li class="icon pinterest fa-pinterest"><a href="http://www.pinterest.com/iconicwatches/"><span><?php print t('Pinterest'); ?></span></a></li>
               <li class="icon google-plus fa-google-plus"><a href=""><span><?php print t('Google+'); ?></span></a></li>
             </ul>
           </div>
