@@ -950,7 +950,7 @@
 			}
 
 			#sidebar .actions {
-				text-align: center;
+				text-align: left;
 			}
 
 			#sidebar ul.versus li {
@@ -959,6 +959,8 @@
 				padding-right: 0.50em;
 				/*display: inline-block;*/
 				vertical-align: top;
+				padding-top: 0;
+				margin-top: 0;
 			}
 
 /*********************************************************************************/
@@ -987,12 +989,14 @@
 /* Brand                                                                         */
 /*********************************************************************************/
 
-	#brands {
+	#brands
+	{
 		vertical-align: top;
 		text-align: center;
 	}
 
-		#brands li {
+		#brands li
+		{
 			display: block;
 			float: left;
 			zoom: 1;
@@ -1001,11 +1005,23 @@
 			margin-top: -1px;
 		}
 
-			#brands li .image {
+		ul.icons li.logo {
+			zoom: 1;
+			vertical-align: top;
+			margin-left: -1px;
+			margin-top: -1px;
+			padding: 0;
+		}
+
+			#brands li .image,
+			.logo
+			{
 				border: solid 1px #ebebeb !important;
 			}
 
-				#brands li .image img {
+				#brands li .image img,
+				.logo img
+				{
 					filter: alpha(opactiy=60);
 					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 					opacity: 0.6;
@@ -1016,7 +1032,9 @@
 					transition: opacity 150ms ease-in-out;
 				}
 
-				#brands li .image img:hover {
+				#brands li .image img:hover,
+				.logo img:hover
+				{
 					filter: alpha(opactiy=100);
 					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 					opacity: 1;

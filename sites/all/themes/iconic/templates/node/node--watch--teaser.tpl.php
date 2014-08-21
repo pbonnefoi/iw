@@ -20,7 +20,7 @@
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
     <?php endif; ?>
   </header>
-  <div class="watch-attributes-wrapper">
+  <div class="watch-attributes-wrapper row">
     <span class="image featured"><?php print render($content['field_watch_picture']); ?></span>
     <ul class="attributes icons">
       <li class="icon fa-cube"><span><?php print t('brand') ?> : </span><?php print render($content['field_brand']); ?></li>

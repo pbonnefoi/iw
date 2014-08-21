@@ -44,4 +44,12 @@
 
   <?php print render($content['body']); ?>
 
+  <div class="row">
+    <?php foreach ($more_images as $key => $image): ?>
+      <div class="4u">
+        <a href="#" class="image featured"><?php print render($image) ?></a>
+      </div>
+    <?php endforeach ?>
+  </div>
+
 </article>

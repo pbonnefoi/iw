@@ -34,8 +34,4 @@
 
   </ul>
 
-
-  <ul class="actions">
-    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-compress"><?php print t('Learn More'); ?></a></li>
-  </ul>
 </article>

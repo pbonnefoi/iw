@@ -26,6 +26,44 @@ function iconic_preprocess_node(&$vars) {
   }
 }
 
+function iconic_preprocess_node_article(&$vars) {
+  $node = &$vars['node'];
+  // Add theme suggestion regarding the selected view display mode
+  $more_images = field_get_items('node', $node, 'field_more_images');
+  $vars['more_images'] = array();
+  if ($more_images) {
+    foreach ($more_images as $key => $image) {
+      $vars['more_images'][] = field_view_value('node', $node, 'field_more_images', $image);
+    }
+  }
+}
+
+function iconic_preprocess_node_watch(&$vars) {
+  $node = &$vars['node'];
+  // Add theme suggestion regarding the selected view display mode
+  $more_images = field_get_items('node', $node, 'field_more_images');
+  $vars['more_images'] = array();
+  if ($more_images) {
+    foreach ($more_images as $key => $image) {
+      $vars['more_images'][] = field_view_value('node', $node, 'field_more_images', $image);
+    }
+  }
+  $brand = field_get_items('node', $node, 'field_brand');
+  if ($brand) {
+    $term = taxonomy_term_load($brand[0]['tid']);
+    $vars['brand_tid'] = $term->tid;
+    $logo = field_get_items('taxonomy_term', $term, 'field_logo');
+    if ($logo) {
+      $vars['brand_logo'] = field_view_value('taxonomy_term', $term, 'field_logo', $logo[0], array(
+        'type' => 'image',
+        'settings' => array(
+          'image_style' => '120x120',
+        ),
+      ));
+    }
+  }
+}
+
 function iconic_preprocess_node_versus(&$vars) {
   $node = &$vars['node'];
   $pros_left = field_get_items('node', $node, 'field_pros_left');

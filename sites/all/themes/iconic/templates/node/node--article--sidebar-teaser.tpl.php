@@ -25,8 +25,4 @@
     <?php print render($content['field_image']); ?>
   </a>
 
-  <ul class="actions">
-    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn More'); ?></a></li>
-  </ul>
-
 </article>

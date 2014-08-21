@@ -77,6 +77,16 @@
 
 </div>
 
+<!-- Banner -->
+<div id="banner-wrapper">
+  <div class="inner">
+    <section id="banner" class="container">
+      <p>Use this space for <strong>profound thoughts</strong>.<br />
+      Or an enormous ad. Whatever.</p>
+    </section>
+  </div>
+</div>
+
 <!-- Footer -->
 <div id="footer-wrapper">
   <div id="footer" class="container">

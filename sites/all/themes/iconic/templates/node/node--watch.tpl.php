@@ -10,7 +10,7 @@
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?> - <?php print render($content['field_watch_reference']); ?></a></h2>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php if ($display_submitted): ?>
         <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
       <?php endif; ?>
@@ -26,7 +26,9 @@
     </div>
     <div class="5u">
       <ul class="attributes icons">
-        <li class="icon fa-cube"><span><?php print t('brand') ?> : </span><?php print render($content['field_brand']); ?></li>
+        <li class="image logo">
+          <a href="<?php print $brand_tid; ?>"><?php print render($brand_logo); ?></a>
+        </li>
         <li class="icon fa-tag"><span><?php print t('Reference') ?> : </span><?php print render($content['field_watch_reference']); ?></li>
         <li class="icon fa-cog"><span><?php print t('Caliber') ?> : </span><?php print render($content['field_caliber']); ?></li>
         <li class="icon fa-arrows-h"><span><?php print t('Diameter') ?> : </span><?php print render($content['field_diameter']); ?></li>
