@@ -1138,7 +1138,7 @@
 	}
 
 	.form-type-radio label {
-		background: url(/sites/all/themes/iconic/images/form-checkbox.png) no-repeat 1em 14px #878787;
+		background: url(/sites/all/themes/iconic/images/form-checkbox.png) no-repeat 1em 9px #878787;
 		color: #e4e4e4 !important;
 		display: inline-block;
 		zoom: 1;
@@ -1159,7 +1159,7 @@
 
 	.form-radios .form-type-radio input[type='radio']:checked + label,
 	.form-checkboxes .form-type-checkbox input[type='checkbox']:checked + label {
-		background-position: 1em -27px;
+		background-position: 1em -73px;
 		color: #666666;
 	}
 
