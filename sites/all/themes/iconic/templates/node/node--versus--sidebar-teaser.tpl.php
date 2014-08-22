@@ -11,9 +11,6 @@
   <header>
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <?php if ($display_submitted): ?>
-        <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
-      <?php endif; ?>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>
@@ -27,7 +24,6 @@
       <?php print render($content['field_watch']); ?>
     </li>
 
-    <!-- Sidebar -->
     <li class="6u versus-right">
       <?php print render($content['field_versus_watch']); ?>
     </li>

@@ -9,6 +9,14 @@ function iconic_commons_entity_info_alter(&$entity_info){
     'label' => t('Sidebar Teaser'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['versus'] = array(
+    'label' => t('Versus'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['versus_teaser'] = array(
+    'label' => t('Versus Teaser'),
+    'custom settings' => TRUE,
+  );
 }
 
 

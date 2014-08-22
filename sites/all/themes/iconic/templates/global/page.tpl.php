@@ -101,9 +101,9 @@
               <?php endforeach; ?>
             </ul>
             <ul class="icons 4u">
-              <li class="icon fa-clock-o"><a href=""><span><?php print t('3 Hands'); ?></span></a></li>
-              <li class="icon fa-anchor"><a href=""><span><?php print t('Divers'); ?></span></a></li>
-              <li class="icon fa-paper-plane"><a href=""><span><?php print t('Chronographs'); ?></span></a></li>
+              <?php foreach ($award_categories as $key => $category): ?>
+                <li class="icon <?php print $category->field_font_awsome_icon['und'][0]['safe_value']; ?>"><a href="<?php print url('taxonomy/term/' . $category->tid); ?>"><span><?php print $category->name; ?></span></a></li>
+              <?php endforeach ?>
             </ul>
             <ul class="icons 4u">
               <li class="icon twitter fa-twitter"><a href="https://twitter.com/Iconic_Watches"><span><?php print t('Twitter'); ?></span></a></li>
@@ -120,7 +120,7 @@
   </div>
   <div id="copyright" class="container">
     <ul class="links">
-      <li>&copy; Iconic Watches. All rights reserved. 2014.</li>
+      <li class="first">&copy; Iconic Watches. All rights reserved. 2014.</li>
       <li>Website: <a href="http://www.pierre-bonnefoi.com">Pierre Bonnefoi</a></li>
     </ul>
   </div>

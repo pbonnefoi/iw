@@ -28,7 +28,6 @@
         </li>
       </ul>
     <?php endif; ?>
-
     <?php if ($unpublished): ?>
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
     <?php endif; ?>
@@ -37,10 +36,9 @@
 
 </article>
 
-<div class="row">
+<div class="row versus">
 
-  <!-- Content -->
-  <div id="versus versus-left" class="6u">
+  <div class="6u versus-left">
     <?php print render($content['field_watch']); ?>
     <?php if ($pros_left): ?>
       <ul class="icons">
@@ -58,8 +56,7 @@
     <?php endif ?>
   </div>
 
-  <!-- Sidebar -->
-  <div id="versus versus-right" class="6u">
+  <div class="6u versus-right">
     <?php print render($content['field_versus_watch']); ?>
     <?php if ($pros_right): ?>
       <ul class="icons">

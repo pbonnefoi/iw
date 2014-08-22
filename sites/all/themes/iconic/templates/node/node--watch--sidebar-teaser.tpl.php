@@ -7,7 +7,7 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
-<article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article class="box highlight node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <header>
     <?php if ($title): ?>
       <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
@@ -15,12 +15,12 @@
         <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
       <?php endif; ?>
     <?php endif; ?>
-
-    <?php if ($unpublished): ?>
-      <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
-    <?php endif; ?>
   </header>
-  <div class="watch-attributes-wrapper">
-    <span class="image featured"><?php print render($content['field_watch_picture']); ?></span>
-  </div>
+  <a href="<?php print url('node/' . $node->nid); ?>" class="image left">
+    <?php print render($content['field_watch_picture']); ?>
+  </a>
+  <p>Phasellus  sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+  viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+  convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+  facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
 </article>

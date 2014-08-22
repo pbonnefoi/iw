@@ -12,6 +12,13 @@ function iconic_preprocess_page(&$vars) {
   $simplenews_block_info = block_load('simplenews', '22');
   // We get the menu block based on the submenu of joaillerie
   $vars['simplenews_block'] = _block_get_renderable_array(_block_render_blocks(array($simplenews_block_info)));
+  $award_categories_vocab = taxonomy_vocabulary_machine_name_load('award_category');
+  $award_categories = taxonomy_get_tree($award_categories_vocab->vid);
+  $vars['award_categories'] = array();
+  foreach ($award_categories as $key => $category) {
+    $term = taxonomy_term_load($category->tid);
+    $vars['award_categories'][] = taxonomy_term_load($category->tid);
+  }
 }
 
 function iconic_preprocess_node(&$vars) {
@@ -60,6 +67,15 @@ function iconic_preprocess_node_watch(&$vars) {
           'image_style' => '120x120',
         ),
       ));
+    }
+  }
+  $award_category = field_get_items('node', $node, 'field_award_category');
+  if ($award_category) {
+    $term = taxonomy_term_load($award_category[0]['tid']);
+    $vars['award_category_tid'] = $term->tid;
+    $font_awsome_icon = field_get_items('taxonomy_term', $term, 'field_font_awsome_icon');
+    if ($logo) {
+      $vars['font_awsome_icon'] = field_view_value('taxonomy_term', $term, 'field_font_awsome_icon', $font_awsome_icon[0]);
     }
   }
 }
