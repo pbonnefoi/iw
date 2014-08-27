@@ -19,8 +19,7 @@
   <a href="<?php print url('node/' . $node->nid); ?>" class="image left">
     <?php print render($content['field_watch_picture']); ?>
   </a>
-  <p>Phasellus  sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-  viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-  convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-  facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+  <?php if ($content['field_award_description']): ?>
+    <p><?php print render($content['field_award_description']); ?></p>
+  <?php endif ?>
 </article>
