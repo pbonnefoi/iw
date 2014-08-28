@@ -52,4 +52,6 @@
     <?php endforeach ?>
   </div>
 
+  <?php print render($content['field_watch']); ?>
+
 </article>
