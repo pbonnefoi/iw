@@ -115,6 +115,9 @@ function iconic_preprocess_node_versus(&$vars) {
 function iconic_preprocess_taxonomy_term(&$vars) {
 }
 
+function iconic_preprocess_view(&$vars) {
+}
+
 function iconic_form_element($vars) {
   $element = &$vars['element'];
 

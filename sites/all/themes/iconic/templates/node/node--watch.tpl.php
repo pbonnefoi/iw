@@ -39,7 +39,7 @@
     <div class="5u">
       <ul class="attributes icons">
         <li class="image logo">
-          <a href="<?php print $brand_tid; ?>"><?php print render($brand_logo); ?></a>
+          <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>
         </li>
         <li class="trophy">
           <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
