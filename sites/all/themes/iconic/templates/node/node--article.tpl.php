@@ -46,7 +46,7 @@
 
   <div class="row">
     <?php foreach ($more_images as $key => $image): ?>
-      <div class="4u">
+      <div class="6u">
         <a href="#" class="image featured"><?php print render($image) ?></a>
       </div>
     <?php endforeach ?>

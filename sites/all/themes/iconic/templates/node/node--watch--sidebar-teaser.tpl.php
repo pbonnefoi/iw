@@ -19,7 +19,16 @@
   <a href="<?php print url('node/' . $node->nid); ?>" class="image left">
     <?php print render($content['field_watch_picture']); ?>
   </a>
-  <?php if ($content['field_award_description']): ?>
+  <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
+    <div class="trophy">
+      <?php print render($content['field_date_award']); ?>
+      <span class="icon fa-trophy"></span>
+      <span class="icon <?php print render($font_awsome_icon); ?>"></span>
+    </div>
+  <?php endif ?>
+  <?php if (isset($content['field_award_description']) && $content['field_award_description']): ?>
     <p><?php print render($content['field_award_description']); ?></p>
+  <?php elseif (isset($content['field_watch_description']) && $content['field_watch_description']): ?>
+    <p><?php print render($content['field_watch_description']); ?></p>
   <?php endif ?>
 </article>

@@ -206,6 +206,49 @@
 				margin: 0 0 0.5em 0;
 			}
 
+			.sidebar-content .trophy {
+				font-size: 1.25em;
+				margin: 0 0 0.5em 0;
+				line-height: 1em;
+			}
+
+				.sidebar-content .trophy span
+				{
+					position: relative;
+					padding: 2em 0 0 2em;
+					border: none;
+					color: #b78727;
+				}
+
+				.sidebar-content .trophy span:before
+				{
+					position: absolute;
+					left: 0;
+					top: 2em;
+					display: block;
+					background: transparent;
+					width: 1.65em;
+					height: 1.65em;
+					border-radius: 1.65em;
+					line-height: 1.65em;
+					text-align: center;
+					box-shadow: none;
+				}
+
+				.sidebar-content .trophy span.date-display-single {
+					padding: 0;
+					background: transparent;
+					font-weight: 400;
+					text-transform: uppercase;
+					border-radius: 0;
+					border: 0;
+					box-shadow: none;
+					letter-spacing: 2px;
+					padding: 0.20em 0 0.20em 0;
+					top: 4px;
+					margin-right: 2px;
+				}
+
 			.image.left
 			{
 				float: left;
