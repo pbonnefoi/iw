@@ -18,7 +18,9 @@
   <?php endif; ?>
 
   <div class="content">
-    <?php print render($content); ?>
+    <li class="image logo">
+      <?php print render($content['field_logo']); ?>
+    </li>
   </div>
 
 </div>

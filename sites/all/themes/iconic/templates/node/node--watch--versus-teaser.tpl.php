@@ -13,7 +13,7 @@
       <span><?php print render($content['field_brand']); ?></span>
       <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
       <?php if ($display_submitted): ?>
-        <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
+        <span class="date desktop-only"><?php print format_date($node->changed, 'short'); ?></span>
       <?php endif; ?>
     <?php endif; ?>
 
