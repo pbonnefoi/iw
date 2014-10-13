@@ -19,7 +19,7 @@
   <a href="<?php print url('node/' . $node->nid); ?>" class="image left">
     <?php print render($content['field_watch_picture']); ?>
   </a>
-  <?php if ($content['field_award_description']): ?>
+  <?php if (isset($content['field_award_description'])): ?>
     <p><?php print render($content['field_award_description']); ?></p>
   <?php endif ?>
 </article>

@@ -13,7 +13,9 @@
 
     <!-- Logo -->
     <h1 id="logo"><a href="<?php print url('<front>'); ?>"><?php print variable_get('site_name'); ?></a></h1>
-    <p><?php print variable_get('site_slogan'); ?></p>
+    <div class="desktop-only">
+      <p><?php print variable_get('site_slogan'); ?></p>
+    </div>
 
     <!-- Nav -->
     <nav id="nav">
@@ -49,7 +51,7 @@
       <!-- Sidebar -->
       <div id="sidebar" class="4u">
 
-        <section class="sidebar-content">
+        <section class="sidebar-content desktop-only">
           <?php print views_embed_view('homepage_articles', 'sidebar_first'); ?>
         </section>
 
@@ -65,7 +67,7 @@
           <a href="" class="image"><img src="/sites/all/themes/iconic/images/small_ad.png" width="355" height="355" alt="" /></a>
         </section>
 
-        <section class="sidebar-content">
+        <section class="sidebar-content desktop-only">
           <?php print views_embed_view('homepage_articles', 'sidebar_second'); ?>
         </section>
 
@@ -95,7 +97,7 @@
         <div class="8u">
           <div class="row">
             <!-- Nav -->
-            <ul class="icons 4u">
+            <ul class="icons 4u desktop-only">
               <?php foreach ($main_menu as $key => $menu_item): ?>
                 <li <?php print isset($menu_item['link']['options']['attributes']) ? drupal_attributes($menu_item['link']['options']['attributes']) : ''; ?>><a href="<?php print url($menu_item['link']['link_path']); ?>"><span><?php print $menu_item['link']['link_title']; ?></span></a></li>
               <?php endforeach; ?>

@@ -338,7 +338,7 @@
 				ul.icons > li
 				{
 					position: relative;
-					padding: 2em 0 0 3em;
+					padding: 1em 0 0 3em;
 					border: none;
 				}
 
@@ -346,7 +346,7 @@
 				{
 					position: absolute;
 					left: 0;
-					top: 2em;
+					top: 1em;
 					display: block;
 					background: #878787;
 					color: #e4e4e4;
