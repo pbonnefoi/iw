@@ -53,7 +53,8 @@
 
     <div class="view-content">
       <div class="brand-description">
-        <?php print render(taxonomy_term_view(taxonomy_term_load(arg(2)))); ?>
+        <?php $tid = arg(2); ?>
+        <?php print render(taxonomy_term_view(taxonomy_term_load($tid))); ?>
       </div>
       <?php if ($rows): ?>
         <?php print $rows; ?>
