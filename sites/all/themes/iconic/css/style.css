@@ -755,7 +755,7 @@
 
 		#banner-wrapper .inner
 		{
-			background: url('../images/banner.jpg');
+			background: #000;
 			background-size: cover;
 		}
 
@@ -1242,4 +1242,12 @@
 
   .form-text {
   	margin-bottom: 1em;
+  }
+
+  #sidebar > section.ad {
+  	padding: 8em 1em 8em 1em;
+  	background: #000;
+  	font-size: 1.5em;
+		line-height: 1.5em;
+		color: #fff;
   }

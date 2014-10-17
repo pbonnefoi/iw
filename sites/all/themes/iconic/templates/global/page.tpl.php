@@ -68,7 +68,7 @@
         </section>
 
         <section class="ad">
-          <a href="" class="image"><img src="/sites/all/themes/iconic/images/small_ad.png" width="355" height="355" alt="" /></a>
+          <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12')); ?></p>
         </section>
 
         <section class="sidebar-content desktop-only">
@@ -87,8 +87,7 @@
 <div id="banner-wrapper">
   <div class="inner">
     <section id="banner" class="container">
-      <p>Use this space for <strong>profound thoughts</strong>.<br />
-      Or an enormous ad. Whatever.</p>
+      <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12')); ?></p>
     </section>
   </div>
 </div>
