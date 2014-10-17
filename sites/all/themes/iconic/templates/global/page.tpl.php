@@ -56,6 +56,10 @@
         </section>
 
         <section class="sidebar-content">
+          <?php print render($search_block); ?>
+        </section>
+
+        <section class="sidebar-content">
           <?php print views_embed_view('brands', 'block'); ?>
         </section>
 

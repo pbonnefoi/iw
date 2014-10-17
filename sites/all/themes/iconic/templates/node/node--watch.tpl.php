@@ -53,10 +53,18 @@
         <li class="icon fa-arrows-h"><span><?php print t('Diameter') ?> : </span><?php print render($content['field_diameter']); ?></li>
         <li class="icon fa-tint"><span><?php print t('Water Resistant') ?> : </span><?php print render($content['field_water_resistant']); ?></li>
         <li class="icon fa-calendar"><span><?php print t('Production Date') ?> : </span><?php print render($content['field_production_year']); ?></li>
+        <?php if (isset($content['field_price_new']) && $content['field_price_new']): ?>
+          <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_new']); ?></li>
+        <?php endif ?>
         <?php if (isset($content['field_price_used_low']) && $content['field_price_used_low']): ?>
           <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_used_low']); ?> / <?php print render($content['field_price_used_high']); ?></li>
         <?php endif ?>
       </ul>
+      <div>
+        <?php if (isset($content['field_watch_description']) && $content['field_watch_description']): ?>
+          <?php print render($content['field_watch_description']); ?>
+        <?php endif; ?>
+      </div>
     </div>
   </div>
 </article>

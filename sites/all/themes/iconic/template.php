@@ -12,6 +12,9 @@ function iconic_preprocess_page(&$vars) {
   $simplenews_block_info = block_load('simplenews', '22');
   // We get the menu block based on the submenu of joaillerie
   $vars['simplenews_block'] = _block_get_renderable_array(_block_render_blocks(array($simplenews_block_info)));
+  $search_block_info = block_load('search', 'form');
+  // We get the menu block based on the submenu of joaillerie
+  $vars['search_block'] = _block_get_renderable_array(_block_render_blocks(array($search_block_info)));
   $award_categories_vocab = taxonomy_vocabulary_machine_name_load('award_category');
   $award_categories = taxonomy_get_tree($award_categories_vocab->vid);
   $vars['award_categories'] = array();
