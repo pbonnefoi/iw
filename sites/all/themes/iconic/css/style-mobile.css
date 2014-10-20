@@ -24,12 +24,17 @@
 		font-size: 1.2em;
 		letter-spacing: 2px;
 		text-align: center;
-		margin: 0 0 1.5em 0;
+		margin: 0 0 0.5em 0;
 	}
 
 	h2 br, h3 br, h4 br, h5 br, h6 br
 	{
 		display: none;
+	}
+
+	.date {
+		text-align: center;
+		margin: 0.25em 0 0.5em 0;
 	}
 
 	/* Sections/Article */

@@ -14,7 +14,7 @@
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php if ($display_submitted): ?>
-        <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
+        <div class="date"><?php print format_date($node->changed, 'short'); ?></div>
       <?php endif; ?>
     <?php endif; ?>
 
@@ -32,7 +32,7 @@
   <?php print render($content['body']); ?>
 
   <ul class="actions">
-    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn More'); ?></a></li>
+    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn more'); ?></a></li>
   </ul>
 
 </article>

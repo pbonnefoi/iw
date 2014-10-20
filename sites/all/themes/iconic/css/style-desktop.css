@@ -19,8 +19,12 @@
 		font-size: 1.65em;
 		font-weight: 400;
 		letter-spacing: 4px;
-		margin: 0 0 0.5em 0;
+		margin: 0;
 		line-height: 1.50em;
+	}
+
+	.date {
+		margin: 0.25em 0 0.5em 0;
 	}
 
 	h3
