@@ -18,9 +18,19 @@
   <?php endif; ?>
 
   <div class="content">
-    <li class="image logo">
-      <?php print render($content['field_logo']); ?>
-    </li>
+    <div class="watch-attributes-wrapper row">
+      <div class="7u">
+        <span class="image featured logo"><?php print render($content['field_logo']); ?></span>
+      </div>
+      <div class="5u">
+        <div>
+          <?php if (isset($content['field_watch_description']) && $content['field_watch_description']): ?>
+            <?php print render($content['field_watch_description']); ?>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
   </div>
+
 
 </div>
