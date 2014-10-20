@@ -23,9 +23,9 @@
     <?php endif; ?>
   </header>
 
-  <a href="#" class="image featured">
+  <div class="image featured">
     <?php print render($content['field_image']); ?>
-  </a>
+  </div>
 
   <h3><?php print render($content['field_subtitle']); ?></h3>
 
