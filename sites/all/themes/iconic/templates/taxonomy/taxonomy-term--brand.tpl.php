@@ -24,8 +24,8 @@
       </div>
       <div class="5u">
         <div>
-          <?php if (isset($content['field_watch_description']) && $content['field_watch_description']): ?>
-            <?php print render($content['field_watch_description']); ?>
+          <?php if (isset($content['description']) && $content['description']): ?>
+            <?php print render($content['description']); ?>
           <?php endif; ?>
         </div>
       </div>
