@@ -10,7 +10,7 @@
 <article class="box highlight node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <header>
     <?php if ($title): ?>
-      <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h3<?php print $title_attributes; ?>><?php print render($content['field_brand']); ?> <a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
       <?php if ($display_submitted): ?>
         <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
       <?php endif; ?>

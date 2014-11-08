@@ -59,16 +59,16 @@
           <?php print render($search_block); ?>
         </section>
 
+        <section class="ad">
+          <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12'), array('absolute' => TRUE)); ?></p>
+        </section>
+
         <section class="sidebar-content">
           <?php print views_embed_view('brands', 'block'); ?>
         </section>
 
         <section class="sidebar-content">
           <?php print render($simplenews_block); ?>
-        </section>
-
-        <section class="ad">
-          <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12')); ?></p>
         </section>
 
         <section class="sidebar-content desktop-only">
@@ -87,7 +87,7 @@
 <div id="banner-wrapper">
   <div class="inner">
     <section id="banner" class="container">
-      <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12')); ?></p>
+      <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12'), array('absolute' => TRUE)); ?></p>
     </section>
   </div>
 </div>
@@ -105,16 +105,16 @@
                 <li <?php print isset($menu_item['link']['options']['attributes']) ? drupal_attributes($menu_item['link']['options']['attributes']) : ''; ?>><a href="<?php print url($menu_item['link']['link_path']); ?>"><span><?php print $menu_item['link']['link_title']; ?></span></a></li>
               <?php endforeach; ?>
             </ul>
-            <ul class="icons 4u">
+            <ul class="icons 4u desktop-only">
               <?php foreach ($award_categories as $key => $category): ?>
                 <li class="icon <?php print $category->field_font_awsome_icon['und'][0]['safe_value']; ?>"><a href="<?php print url('taxonomy/term/' . $category->tid); ?>"><span><?php print $category->name; ?></span></a></li>
               <?php endforeach ?>
             </ul>
             <ul class="icons 4u">
-              <li class="icon twitter fa-twitter"><a href="https://twitter.com/Iconic_Watches"><span><?php print t('Twitter'); ?></span></a></li>
-              <li class="icon facebook fa-facebook"><a href=""><span><?php print t('Facebook'); ?></span></a></li>
-              <li class="icon pinterest fa-pinterest"><a href="http://www.pinterest.com/iconicwatches/"><span><?php print t('Pinterest'); ?></span></a></li>
-              <li class="icon google-plus fa-google-plus"><a href=""><span><?php print t('Google+'); ?></span></a></li>
+              <li class="icon twitter fa-twitter"><a href="https://twitter.com/Iconic_Watches" target="_blank"><span><?php print t('Twitter'); ?></span></a></li>
+              <li class="icon facebook fa-facebook"><a href="https://www.facebook.com/iconicwatchesblog" target="_blank"><span><?php print t('Facebook'); ?></span></a></li>
+              <li class="icon pinterest fa-pinterest"><a href="http://www.pinterest.com/iconicwatches/" target="_blank"><span><?php print t('Pinterest'); ?></span></a></li>
+              <li class="icon google-plus fa-google-plus"><a href="" target="_blank"><span><?php print t('Google+'); ?></span></a></li>
             </ul>
           </div>
         </div>

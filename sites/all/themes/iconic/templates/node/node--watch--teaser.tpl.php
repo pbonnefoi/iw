@@ -10,7 +10,7 @@
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <h2<?php print $title_attributes; ?>><?php print render($content['field_brand']); ?> <a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php if ($display_submitted): ?>
         <div class="date"><?php print format_date($node->changed, 'short'); ?></div>
       <?php endif; ?>
@@ -25,7 +25,7 @@
     </div>
     <div class="5u">
       <ul class="attributes icons">
-        <li class="image logo">
+        <li class="image logo desktop-only">
           <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>
         </li>
         <li class="trophy">
@@ -41,7 +41,7 @@
         <li class="icon fa-tint"><span><?php print t('Water Resistant') ?> : </span><?php print render($content['field_water_resistant']); ?></li>
         <li class="icon fa-calendar"><span><?php print t('Production Date') ?> : </span><?php print render($content['field_production_year']); ?></li>
         <?php if (isset($content['field_price_new']) && $content['field_price_new']): ?>
-          <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_new']); ?> €</li>
+          <li class="icon fa-money"><span><?php print t('Price new') ?> : </span><?php print render($content['field_price_new']); ?> €</li>
         <?php endif; ?>
         <?php if (isset($content['field_price_used_low']) && $content['field_price_used_low']): ?>
           <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_used_low']); ?> € / <?php print render($content['field_price_used_high']); ?> €</li>
