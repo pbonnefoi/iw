@@ -17,6 +17,10 @@ function iconic_commons_entity_info_alter(&$entity_info){
     'label' => t('Versus Teaser'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['view_teaser'] = array(
+    'label' => t('View Teaser'),
+    'custom settings' => TRUE,
+  );
 }
 
 
