@@ -434,3 +434,13 @@
 	.trophy {
 		font-size: 1.5em;
 	}
+
+	.row-watches:not(.no-collapse):not(.no-collapse-1):not(.no-collapse-2):not(.no-collapse-3)>* {
+		float: none!important;
+		width: 100%!important;
+		margin-left: 0!important;
+	}
+
+	.row-watches, .row-watches div {
+		display: block;
+	}

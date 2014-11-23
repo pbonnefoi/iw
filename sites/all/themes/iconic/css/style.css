@@ -1351,3 +1351,20 @@
 		width: 100px;
 		height: 100px;
 	}
+
+  .pager li {
+  	float: left;
+  	margin-right: 10px;
+  	font-size: 1.75em;
+  	color: #fff;
+		padding: 2px 4px 4px 4px;
+		background: #000;
+  }
+
+  .pager li.pager-current {
+  	background: #888;
+  }
+
+	.pager li a {
+  	color: #fff;
+  }

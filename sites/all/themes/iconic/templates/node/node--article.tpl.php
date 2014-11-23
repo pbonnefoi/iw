@@ -52,6 +52,12 @@
     <?php endforeach ?>
   </div>
 
-  <?php print render($content['field_watch']); ?>
+  <div class="row-watches grid-view">
+    <?php foreach ($watches as $id => $watch): ?>
+      <div class="item watch 4u">
+        <?php print render($watch); ?>
+      </div>
+    <?php endforeach; ?>
+  </div>
 
 </article>

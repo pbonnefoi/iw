@@ -126,6 +126,7 @@
   <div id="copyright" class="container">
     <ul class="links">
       <li class="first">&copy; Iconic Watches. All rights reserved. 2014.</li>
+      <li><?php print l(t('Legal notice'), 'node/23'); ?></li>
       <li>Website: <a href="http://www.pierre-bonnefoi.com">Pierre Bonnefoi</a></li>
     </ul>
   </div>

@@ -20,7 +20,9 @@
       </a>
     </div>
     <div class="captions">
-      <h3 class="grid-title"><?php print $title; ?></h3>
+      <a href="<?php print url('node/' . $node->nid); ?>">
+        <h3 class="grid-title"><?php print $title; ?></h3>
+      </a>
     </div>
     <span class="grid-learn-more">
       <a href="<?php print url('node/' . $node->nid); ?>">

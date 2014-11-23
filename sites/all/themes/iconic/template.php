@@ -46,6 +46,11 @@ function iconic_preprocess_node_article(&$vars) {
       $vars['more_images'][] = field_view_value('node', $node, 'field_more_images', $image);
     }
   }
+  $watches = field_get_items('node', $node, 'field_watch');
+  $vars['watches'] = array();
+  foreach ($watches as $key => $watch) {
+    $vars['watches'][] = node_view(node_load($watch['target_id']), 'view_teaser');
+  }
 }
 
 function iconic_preprocess_node_watch(&$vars) {
