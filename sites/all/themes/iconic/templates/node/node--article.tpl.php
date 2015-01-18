@@ -45,16 +45,18 @@
   <?php print render($content['body']); ?>
 
   <div class="row">
-    <?php foreach ($more_images as $key => $image): ?>
+    <?php foreach ($content['field_more_images']['#items'] as $key_image => $image): ?>
       <div class="6u">
-        <a href="#" class="image featured"><?php print render($image) ?></a>
+        <div class="image featured">
+          <?php print render($content['field_more_images'][$key_image]); ?>
+        </div>
       </div>
     <?php endforeach ?>
   </div>
 
   <div class="row-watches grid-view">
     <?php foreach ($watches as $id => $watch): ?>
-      <div class="item watch 4u">
+      <div class="item watch 6u">
         <?php print render($watch); ?>
       </div>
     <?php endforeach; ?>

@@ -21,9 +21,9 @@
   </a>
   <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
     <div class="trophy">
-      <?php print render($content['field_date_award']); ?>
+      <span class="icon trophy-name"><?php print $award_category_name; ?></span>
       <span class="icon fa-trophy"></span>
-      <span class="icon <?php print render($font_awsome_icon); ?>"></span>
+      <?php print render($content['field_date_award']); ?>
     </div>
   <?php endif ?>
   <?php if (isset($content['field_award_description']) && $content['field_award_description']): ?>

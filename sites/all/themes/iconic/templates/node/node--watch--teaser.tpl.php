@@ -30,9 +30,9 @@
         </li>
         <li class="trophy">
           <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
-            <?php print render($content['field_date_award']); ?>
+            <span class="icon trophy-name"><?php print $award_category_name; ?></span>
             <span class="icon fa-trophy"></span>
-            <span class="icon <?php print render($font_awsome_icon); ?>"></span>
+            <?php print render($content['field_date_award']); ?>
           <?php endif ?>
         </li>
         <li class="icon fa-tag"><span><?php print t('Reference') ?> : </span><?php print render($content['field_watch_reference']); ?></li>

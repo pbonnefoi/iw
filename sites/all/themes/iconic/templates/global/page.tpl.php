@@ -46,6 +46,9 @@
       <!-- Content -->
       <div id="content" class="8u">
         <?php print render($page['content']); ?>
+        <?php if ($view_to_render): ?>
+          <?php print views_embed_view($view_to_render, 'block'); ?>
+        <?php endif ?>
       </div>
 
       <!-- Sidebar -->

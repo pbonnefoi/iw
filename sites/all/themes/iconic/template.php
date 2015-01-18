@@ -22,6 +22,10 @@ function iconic_preprocess_page(&$vars) {
     $term = taxonomy_term_load($category->tid);
     $vars['award_categories'][] = taxonomy_term_load($category->tid);
   }
+  $vars['view_to_render'] = '';
+  if (drupal_is_front_page() || (isset($arg[0]) && count($arg[0]) == 1 && $arg[0] == 'watches')) {
+    $vars['view_to_render'] = 'watches';
+  }
 }
 
 function iconic_preprocess_node(&$vars) {
@@ -81,10 +85,15 @@ function iconic_preprocess_node_watch(&$vars) {
   if ($award_category) {
     $term = taxonomy_term_load($award_category[0]['tid']);
     $vars['award_category_tid'] = $term->tid;
+    $vars['award_category_name'] = $term->name;
     $font_awsome_icon = field_get_items('taxonomy_term', $term, 'field_font_awsome_icon');
     if ($logo) {
       $vars['font_awsome_icon'] = field_view_value('taxonomy_term', $term, 'field_font_awsome_icon', $font_awsome_icon[0]);
     }
+  }
+  $vars['class'] = '';
+  if (isset($vars['field_award_category']) && $vars['field_award_category']){
+    $vars['class'] = ' awarded';
   }
 }
 

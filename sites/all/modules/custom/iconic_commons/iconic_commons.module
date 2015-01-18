@@ -23,6 +23,33 @@ function iconic_commons_entity_info_alter(&$entity_info){
   );
 }
 
+// function iconic_commons_form_node_form_alter(&$form, $form_state, $form_id) {
+//   if ($form_id == 'watch_node_form') {
+//     $form['#submit'][] = 'iconic_commons_auto_link_to_tag_field_submit';
+//   }
+// }
+
+// function iconic_commons_auto_link_to_tag_field_submit(&$form, $form_state) {
+//   $tag_value = '';
+//   if (isset($form['field_watch_category']['und']['#value'])) {
+//     foreach ($form['field_watch_category']['und']['#value'] as $key => $value) {
+//       $term = taxonomy_term_load($value);
+//       $tag_value .= ', ' . $term->name;
+//     }
+//   }
+//   if (isset($form['field_case']['und']['#value'])) {
+//     foreach ($form['field_case']['und']['#value'] as $key => $value) {
+//       $term = taxonomy_term_load($value);
+//       $tag_value .= ', ' . $term->name;
+//     }
+//   }
+//   if (isset($form['field_award_category']['und']['#value']) && $form['field_award_category']['und']['#value'] != '_none') {
+//     $tag_value .= ', ' . $form['field_award_category']['und']['#value'];
+//   }
+//   if (isset($form['field_tags']['und']['#value'])) {
+//     $form['field_tags']['und']['#value'] = $form['field_tags']['und']['#value'] . $tag_value;
+//   }
+// }
 
 function iconic_commons_form_alter(&$form, $form_state, $form_id) {
   if (in_array($form_id, array('poll_view_voting', 'poll_cancel_form'))) {

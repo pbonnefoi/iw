@@ -7,13 +7,13 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
-<div class="grid-picture">
+<div class="grid-picture<?php print $class; ?>">
   <a href="<?php print url('node/' . $node->nid); ?>" class="image featured">
     <?php print render($content['field_watch_picture']); ?>
   </a>
 </div>
 <div class="grid-roll-wrapper">
-  <div class="grid-roll">
+  <div class="grid-roll<?php print $class; ?>">
     <div class="brand">
       <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>">
         <?php print render($brand_logo); ?>
