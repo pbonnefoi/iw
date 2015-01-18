@@ -44,15 +44,17 @@
 
   <?php print render($content['body']); ?>
 
-  <div class="row">
-    <?php foreach ($content['field_more_images']['#items'] as $key_image => $image): ?>
-      <div class="6u">
-        <div class="image featured">
-          <?php print render($content['field_more_images'][$key_image]); ?>
+  <?php if (isset($content['field_more_images']['#items']) && $content['field_more_images']['#items']): ?>
+    <div class="row">
+      <?php foreach ($content['field_more_images']['#items'] as $key_image => $image): ?>
+        <div class="6u">
+          <div class="image featured">
+            <?php print render($content['field_more_images'][$key_image]); ?>
+          </div>
         </div>
-      </div>
-    <?php endforeach ?>
-  </div>
+      <?php endforeach ?>
+    </div>
+  <?php endif; ?>
 
   <div class="row-watches grid-view">
     <?php foreach ($watches as $id => $watch): ?>

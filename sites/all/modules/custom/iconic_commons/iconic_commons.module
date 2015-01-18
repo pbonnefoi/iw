@@ -25,30 +25,48 @@ function iconic_commons_entity_info_alter(&$entity_info){
 
 // function iconic_commons_form_node_form_alter(&$form, $form_state, $form_id) {
 //   if ($form_id == 'watch_node_form') {
-//     $form['#submit'][] = 'iconic_commons_auto_link_to_tag_field_submit';
+//     $form['#validate'][] = 'iconic_commons_auto_link_to_tag_field_validate';
 //   }
 // }
 
-// function iconic_commons_auto_link_to_tag_field_submit(&$form, $form_state) {
+// function iconic_commons_auto_link_to_tag_field_validate(&$form, $form_state) {
 //   $tag_value = '';
 //   if (isset($form['field_watch_category']['und']['#value'])) {
 //     foreach ($form['field_watch_category']['und']['#value'] as $key => $value) {
 //       $term = taxonomy_term_load($value);
-//       $tag_value .= ', ' . $term->name;
+//       $form_state['values']['field_tags']['und'][] = array(
+//         'tid' => 'autocreate',
+//         'vid' => '1',
+//         'name' => $term->name,
+//         'vocabulary_machine_name' => 'tags'
+//       );
 //     }
 //   }
 //   if (isset($form['field_case']['und']['#value'])) {
 //     foreach ($form['field_case']['und']['#value'] as $key => $value) {
 //       $term = taxonomy_term_load($value);
-//       $tag_value .= ', ' . $term->name;
+//       $form_state['values']['field_tags']['und'][] = array(
+//         'tid' => 'autocreate',
+//         'vid' => '1',
+//         'name' => $term->name,
+//         'vocabulary_machine_name' => 'tags'
+//       );
 //     }
 //   }
 //   if (isset($form['field_award_category']['und']['#value']) && $form['field_award_category']['und']['#value'] != '_none') {
-//     $tag_value .= ', ' . $form['field_award_category']['und']['#value'];
+//     $form_state['values']['field_tags']['und'][] = array(
+//       'tid' => 'autocreate',
+//       'vid' => '1',
+//       'name' => $form['field_award_category']['und']['#value'],
+//       'vocabulary_machine_name' => 'tags'
+//     );
 //   }
-//   if (isset($form['field_tags']['und']['#value'])) {
-//     $form['field_tags']['und']['#value'] = $form['field_tags']['und']['#value'] . $tag_value;
-//   }
+//   $form_state['values']['field_tags']['und'][] = array(
+//     'tid' => 'autocreate',
+//     'vid' => '1',
+//     'name' => $form['field_award_category']['und']['#value'],
+//     'vocabulary_machine_name' => 'tags'
+//   );
 // }
 
 function iconic_commons_form_alter(&$form, $form_state, $form_id) {

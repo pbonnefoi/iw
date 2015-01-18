@@ -838,7 +838,7 @@
 			font-family: 'Megrim';
 			font-weight: 700;
 			color: #fff;
-			text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+			text-shadow: 0.03em 0.03em 0 rgba(0,0,0,0.1);
 			text-transform: none;
 		}
 
@@ -846,6 +846,7 @@
 			{
 				color: #fff;
 				border: 0;
+				font-weight: normal;
 			}
 
 		#header p
@@ -1376,3 +1377,27 @@
 	.pager li a {
   	color: #fff;
   }
+
+/*********************************************************************************/
+/* Level                                                                         */
+/*********************************************************************************/
+
+#cboxTitle {
+	background: rgba(0, 0, 0, 0.9) !important;
+	color: #fff !important;
+}
+
+#cboxWrapper {
+	background: #777776 !important;
+	-moz-border-radius: none !important;
+	-webkit-border-radius: none !important;
+	border-radius: none !important;
+}
+
+#cboxContent {
+	background: #777776 !important;
+}
+
+#cboxCurrent {
+	color: #fff !important;
+}

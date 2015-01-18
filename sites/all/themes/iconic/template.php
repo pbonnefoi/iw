@@ -23,7 +23,8 @@ function iconic_preprocess_page(&$vars) {
     $vars['award_categories'][] = taxonomy_term_load($category->tid);
   }
   $vars['view_to_render'] = '';
-  if (drupal_is_front_page() || (isset($arg[0]) && count($arg[0]) == 1 && $arg[0] == 'watches')) {
+  $node = menu_get_object();
+  if (drupal_is_front_page() || (isset($node->type) && ($node->type == 'watch' || $node->type == 'article'))) {
     $vars['view_to_render'] = 'watches';
   }
 }
