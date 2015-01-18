@@ -43,13 +43,6 @@ function iconic_preprocess_node(&$vars) {
 function iconic_preprocess_node_article(&$vars) {
   $node = &$vars['node'];
   // Add theme suggestion regarding the selected view display mode
-  $more_images = field_get_items('node', $node, 'field_more_images');
-  $vars['more_images'] = array();
-  if ($more_images) {
-    foreach ($more_images as $key => $image) {
-      $vars['more_images'][] = field_view_value('node', $node, 'field_more_images', $image);
-    }
-  }
   $watches = field_get_items('node', $node, 'field_watch');
   $vars['watches'] = array();
   foreach ($watches as $key => $watch) {
@@ -60,13 +53,6 @@ function iconic_preprocess_node_article(&$vars) {
 function iconic_preprocess_node_watch(&$vars) {
   $node = &$vars['node'];
   // Add theme suggestion regarding the selected view display mode
-  $more_images = field_get_items('node', $node, 'field_more_images');
-  $vars['more_images'] = array();
-  if ($more_images) {
-    foreach ($more_images as $key => $image) {
-      $vars['more_images'][] = field_view_value('node', $node, 'field_more_images', $image);
-    }
-  }
   $brand = field_get_items('node', $node, 'field_brand');
   if ($brand) {
     $term = taxonomy_term_load($brand[0]['tid']);

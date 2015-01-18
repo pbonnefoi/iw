@@ -8,6 +8,7 @@
  */
 ?>
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+
   <header>
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><?php print render($content['field_brand']); ?> <a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -32,6 +33,7 @@
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
     <?php endif; ?>
   </header>
+
   <div class="watch-attributes-wrapper row">
     <div class="7u">
       <span class="image featured"><?php print render($content['field_watch_picture']); ?></span>
@@ -67,4 +69,15 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <?php foreach ($content['field_more_images']['#items'] as $key_image => $image): ?>
+      <div class="6u">
+        <div class="image featured">
+          <?php print render($content['field_more_images'][$key_image]); ?>
+        </div>
+      </div>
+    <?php endforeach ?>
+  </div>
+
 </article>
