@@ -16,7 +16,7 @@
       <?php endif; ?>
     <?php endif; ?>
   </header>
-  <a href="<?php print url('node/' . $node->nid); ?>" class="image left">
+  <a href="<?php print url('node/' . $node->nid); ?>" class="image left image-watch">
     <?php print render($content['field_watch_picture']); ?>
   </a>
   <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>

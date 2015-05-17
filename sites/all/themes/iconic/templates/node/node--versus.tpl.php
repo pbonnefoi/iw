@@ -12,11 +12,6 @@
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <ul class="links inline social-sharing">
-        <?php if ($display_submitted): ?>
-          <li class="date">
-            <?php print format_date($node->changed, 'short'); ?>
-          </li>
-        <?php endif; ?>
         <li class="pinit-button">
           <?php print render($content['links']); ?>
         </li>

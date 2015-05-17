@@ -21,7 +21,7 @@
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
     <?php endif; ?>
   </header>
-  <div class="watch-attributes-wrapper">
-    <span class="image featured"><?php print render($content['field_watch_picture']); ?></span>
+  <div class="watch-attributes-wrapper watch-attributes">
+    <span class="image featured image-watch"><?php print render($content['field_watch_picture']); ?></span>
   </div>
 </article>

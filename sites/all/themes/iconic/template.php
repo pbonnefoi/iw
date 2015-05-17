@@ -47,7 +47,7 @@ function iconic_preprocess_node_article(&$vars) {
   $watches = field_get_items('node', $node, 'field_watch');
   $vars['watches'] = array();
   foreach ($watches as $key => $watch) {
-    $vars['watches'][] = node_view(node_load($watch['target_id']), 'view_teaser');
+    $vars['watches'][] = node_view(node_load($watch['target_id']), 'entity_ref_teaser');
   }
 }
 
@@ -117,6 +117,16 @@ function iconic_preprocess_node_versus(&$vars) {
 }
 
 function iconic_preprocess_taxonomy_term(&$vars) {
+  $term = $vars['term'];
+  if ($term->vid == variable_get('brand_vid', 3)) {
+    $vars['country'] = '';
+    $vars['city'] = '';
+    $adresse = field_get_items('taxonomy_term', $term, 'field_adresse');
+    if ($adresse) {
+      $vars['country'] = $adresse[0]['country_name'];
+      $vars['city'] = $adresse[0]['city'];
+    }
+  }
 }
 
 function iconic_preprocess_view(&$vars) {

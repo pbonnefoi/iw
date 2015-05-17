@@ -29,8 +29,8 @@
 
   <noscript>
     <link rel="stylesheet" href="css/skel.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style-desktop.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/style-desktop.min.css" />
   </noscript>
 
   <?php if ($add_html5_shim and !$add_respond_js): ?>

@@ -10,10 +10,10 @@
 		reset: 'full',
 		ignoreOrientation: true,
 		breakpoints: {
-			'global':	{ range: '*', href: '/sites/all/themes/iconic/css/style.css' },
-			'desktop':	{ range: '481-', href: '/sites/all/themes/iconic/css/style-desktop.css', containers: 1200, grid: { gutters: 50 } },
-			'1000px':	{ range: '481-1200', href: '/sites/all/themes/iconic/css/style-1000px.css', containers: 960, grid: { gutters: 30 }, viewportWidth: 1080 },
-			'mobile':	{ range: '-480', href: '/sites/all/themes/iconic/css/style-mobile.css', containers: '100%', grid: { collapse: true, gutters: 10 }, lockViewport: true }
+			'global':	{ range: '*', href: '/sites/all/themes/iconic/css/style.min.css' },
+			'desktop':	{ range: '769-', href: '/sites/all/themes/iconic/css/style-desktop.min.css', containers: 1200, grid: { gutters: 50 } },
+			'1000px':	{ range: '769-1200', href: '/sites/all/themes/iconic/css/style-1000px.min.css', containers: 950, grid: { gutters: 30 }, viewportWidth: 1080 },
+			'mobile':	{ range: '-768', href: '/sites/all/themes/iconic/css/style-mobile.min.css', containers: '100%', grid: { collapse: true, gutters: 10 }, lockViewport: true }
 		}
 	}, {
 		layers: {

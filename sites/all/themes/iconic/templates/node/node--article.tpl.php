@@ -42,7 +42,9 @@
 
   <h3><?php print render($content['field_subtitle']); ?></h3>
 
-  <?php print render($content['body']); ?>
+  <div class="article-body">
+    <?php print render($content['body']); ?>
+  </div>
 
   <?php if (isset($content['field_more_images']['#items']) && $content['field_more_images']['#items']): ?>
     <div class="row">

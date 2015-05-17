@@ -24,11 +24,25 @@ $arg = arg();
         <span class="image featured logo"><?php print render($content['field_logo']); ?></span>
       </div>
       <div class="8u">
-        <div>
-          <?php if (isset($content['description']) && $content['description']): ?>
-            <?php print render($content['description']); ?>
-          <?php endif; ?>
-        </div>
+        <ul class="attributes icons">
+          <?php if ($content['field_creation_date']): ?>
+            <li class="icon fa-history"><span><?php print t('Founded'); ?> : </span><?php print render($content['field_creation_date']); ?></li>
+          <?php endif ?>
+          <?php if ($content['field_founder']): ?>
+            <li class="icon fa-pencil"><span><?php print t('Founder'); ?> : </span><?php print render($content['field_founder']); ?></li>
+          <?php endif ?>
+          <?php if ($city && $country): ?>
+            <li class="icon fa-map-marker"><span><?php print t('Place'); ?> : </span><?php print $city . ', ' . $country; ?></li>
+          <?php endif ?>
+          <?php if ($content['field_company_entity']): ?>
+            <li class="icon fa-institution"><span><?php print t('Entity'); ?> : </span><?php print render($content['field_company_entity']); ?></li>
+          <?php endif ?>
+        </ul>
+      </div>
+      <div>
+        <?php if (isset($content['description']) && $content['description']): ?>
+          <?php print render($content['description']); ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

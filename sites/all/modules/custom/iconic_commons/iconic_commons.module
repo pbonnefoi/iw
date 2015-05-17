@@ -21,6 +21,10 @@ function iconic_commons_entity_info_alter(&$entity_info){
     'label' => t('View Teaser'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['entity_ref_teaser'] = array(
+    'label' => t('Entity Ref Teaser'),
+    'custom settings' => TRUE,
+  );
 }
 
 // function iconic_commons_form_node_form_alter(&$form, $form_state, $form_id) {

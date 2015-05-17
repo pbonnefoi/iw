@@ -21,7 +21,16 @@
     <nav id="nav">
       <ul>
         <?php foreach ($main_menu as $key => $menu_item): ?>
-          <li><a <?php print isset($menu_item['link']['options']['attributes']) ? drupal_attributes($menu_item['link']['options']['attributes']) : ''; ?> href="<?php print url($menu_item['link']['link_path']); ?>"><span><?php print $menu_item['link']['link_title']; ?></span></a></li>
+          <li>
+            <a <?php print isset($menu_item['link']['options']['attributes']) ? drupal_attributes($menu_item['link']['options']['attributes']) : ''; ?> href="<?php print url($menu_item['link']['link_path']); ?>"><span><?php print $menu_item['link']['link_title']; ?></span></a>
+            <?php if ($menu_item['below']): ?>
+              <ul>
+              <?php foreach ($menu_item['below'] as $key => $menu_item_below): ?>
+                <li><a href="<?php print url($menu_item_below['link']['link_path']); ?>"><?php print $menu_item_below['link']['link_title']; ?></a></li>
+              <?php endforeach ?>
+              </ul>
+            <?php endif ?>
+          </li>
         <?php endforeach; ?>
       </ul>
     </nav>
@@ -113,7 +122,7 @@
                 <li class="icon <?php print $category->field_font_awsome_icon['und'][0]['safe_value']; ?>"><a href="<?php print url('taxonomy/term/' . $category->tid); ?>"><span><?php print $category->name; ?></span></a></li>
               <?php endforeach ?>
             </ul>
-            <ul class="icons 4u">
+            <ul class="icons 4u social-menu">
               <li class="icon twitter fa-twitter"><a href="https://twitter.com/Iconic_Watches" target="_blank"><span><?php print t('Twitter'); ?></span></a></li>
               <li class="icon facebook fa-facebook"><a href="https://www.facebook.com/iconicwatchesblog" target="_blank"><span><?php print t('Facebook'); ?></span></a></li>
               <li class="icon pinterest fa-pinterest"><a href="http://www.pinterest.com/iconicwatches/" target="_blank"><span><?php print t('Pinterest'); ?></span></a></li>
@@ -121,7 +130,11 @@
             </ul>
           </div>
         </div>
-        <div class="4u">
+        <div class="4u desktop-only">
+          <h4><?php print t('Useful links'); ?> :</h4>
+          <ul>
+            <li><a href="http://montresanciennes.fr/" target="_blank"><span>montreanciennes.fr</span></a></li>
+          </ul>
         </div>
       </div>
     </section>

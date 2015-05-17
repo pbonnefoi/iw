@@ -133,6 +133,10 @@
 		margin-bottom: 1em;
 	}
 
+	p#skip-link {
+		margin-bottom: 0;
+	}
+
 	br.clear
 	{
 		clear: both;
@@ -176,7 +180,8 @@
 				opacity: 0.9;
 			}
 
-			.image img
+			.image img,
+			.article-body img
 			{
 				display: block;
 				width: 100%;
@@ -1400,4 +1405,14 @@
 
 #cboxCurrent {
 	color: #fff !important;
+}
+
+.view-id-watches.view-display-id-block {
+	margin-top: 2em;
+	padding-top: 2em;
+	border-top: solid 2px #e5e5e5;
+}
+
+.date-display-single {
+	font-weight: normal;
 }
