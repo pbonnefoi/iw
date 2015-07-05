@@ -126,7 +126,8 @@
               <li class="icon twitter fa-twitter"><a href="https://twitter.com/Iconic_Watches" target="_blank"><span><?php print t('Twitter'); ?></span></a></li>
               <li class="icon facebook fa-facebook"><a href="https://www.facebook.com/iconicwatchesblog" target="_blank"><span><?php print t('Facebook'); ?></span></a></li>
               <li class="icon pinterest fa-pinterest"><a href="http://www.pinterest.com/iconicwatches/" target="_blank"><span><?php print t('Pinterest'); ?></span></a></li>
-              <li class="icon google-plus fa-google-plus"><a href="" target="_blank"><span><?php print t('Google+'); ?></span></a></li>
+              <li class="icon google-plus fa-google-plus"><a href="https://www.google.com/+Iconicwatchesblog" target="_blank"><span><?php print t('Google+'); ?></span></a></li>
+              <li class="icon instagram fa-instagram"><a href="https://instagram.com/iconicwatches/" target="_blank"><span><?php print t('Instagram'); ?></span></a></li>
             </ul>
           </div>
         </div>
