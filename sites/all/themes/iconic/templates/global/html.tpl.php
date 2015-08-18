@@ -48,6 +48,9 @@
   <?php endif; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+  <div id="loading">
+    <img id="loading-image" src="<?php print drupal_get_path('theme', 'iconic') . '/images/loader-7.gif'; ?>" alt="Loading..." />
+  </div>
   <?php if ($skip_link_text && $skip_link_anchor): ?>
     <p id="skip-link">
       <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
@@ -56,5 +59,10 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+  <script language="javascript" type="text/javascript">
+       $(window).load(function() {
+       $('#loading').hide();
+    });
+  </script>
 </body>
 </html>

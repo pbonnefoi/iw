@@ -12,10 +12,7 @@
 
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <?php if ($display_submitted): ?>
-        <div class="date"><?php print format_date($node->changed, 'short'); ?></div>
-      <?php endif; ?>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" titl="<?php print $title; ?>"><?php print $title; ?></a></h2>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>
@@ -24,10 +21,10 @@
   </header>
 
   <div class="image featured">
-    <?php print render($content['field_image']); ?>
+    <a href="<?php print url('node/' . $node->nid); ?>" title="<?php print $title; ?>">
+      <?php print render($content['field_image']); ?>
+    </a>
   </div>
-
-  <h3><?php print render($content['field_subtitle']); ?></h3>
 
   <?php print render($content['body']); ?>
 

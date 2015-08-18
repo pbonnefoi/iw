@@ -12,6 +12,9 @@ function iconic_preprocess_page(&$vars) {
   $simplenews_block_info = block_load('simplenews', '22');
   // We get the menu block based on the submenu of joaillerie
   $vars['simplenews_block'] = _block_get_renderable_array(_block_render_blocks(array($simplenews_block_info)));
+  $instagram_block_info = block_load('instagram_block', 'instagram_block');
+  // We get the menu block based on the submenu of joaillerie
+  $vars['instagram_block'] = _block_get_renderable_array(_block_render_blocks(array($instagram_block_info)));
   $search_block_info = block_load('search', 'form');
   // We get the menu block based on the submenu of joaillerie
   $vars['search_block'] = _block_get_renderable_array(_block_render_blocks(array($search_block_info)));

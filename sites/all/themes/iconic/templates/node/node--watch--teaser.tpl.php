@@ -10,7 +10,7 @@
 <article class="box post node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><?php print render($content['field_brand']); ?> <a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print render($content['field_brand']); ?> <?php print $title; ?></a></h2>
       <?php if ($display_submitted): ?>
         <div class="date"><?php print format_date($node->changed, 'short'); ?></div>
       <?php endif; ?>
@@ -21,7 +21,9 @@
   </header>
   <div class="watch-attributes-wrapper row watch-attributes">
     <div class="7u">
-      <span class="image featured image-watch"><?php print render($content['field_watch_picture']); ?></span>
+      <a href="<?php print $node_url; ?>" title="<?php print $title; ?>">
+        <span class="image featured image-watch"><?php print render($content['field_watch_picture']); ?></span>
+      </a>
     </div>
     <div class="5u">
       <ul class="attributes icons">

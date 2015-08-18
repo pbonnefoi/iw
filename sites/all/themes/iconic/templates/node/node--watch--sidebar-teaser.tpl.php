@@ -11,9 +11,6 @@
   <header>
     <?php if ($title): ?>
       <h3<?php print $title_attributes; ?>><?php print render($content['field_brand']); ?> <a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-      <?php if ($display_submitted): ?>
-        <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
-      <?php endif; ?>
     <?php endif; ?>
   </header>
   <a href="<?php print url('node/' . $node->nid); ?>" class="image left image-watch">

@@ -68,6 +68,23 @@
         </section>
 
         <section class="sidebar-content">
+          <h2 class="block__title block-title"><?php print $instagram_block['instagram_block_instagram_block']['#block']->title; ?></h2>
+          <div class="view-content">
+            <ul id="instagram-feed" class="clearfix">
+              <?php foreach ($instagram_block['instagram_block_instagram_block']['children'] as $key => $instagram_block_image): ?>
+                <li class="4u">
+                  <div class="image">
+                    <a class="group" target="blank_" rel="group1" href="<?php print $instagram_block_image['#href']; ?>">
+                      <img style="float: left; margin: 0 5px 5px 0px; width: <?php print $instagram_block_image['#width']; ?>px; height: <?php print $instagram_block_image['#height']; ?>px;" src="<?php print $instagram_block_image['#src']; ?>">
+                    </a>
+                  </div>
+                </li>
+              <?php endforeach ?>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sidebar-content">
           <?php print render($search_block); ?>
         </section>
 
@@ -81,10 +98,6 @@
 
         <section class="sidebar-content">
           <?php print render($simplenews_block); ?>
-        </section>
-
-        <section class="sidebar-content desktop-only">
-          <?php print views_embed_view('homepage_articles', 'sidebar_second'); ?>
         </section>
 
       </div>

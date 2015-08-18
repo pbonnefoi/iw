@@ -13,7 +13,6 @@
   <header>
     <?php if ($title): ?>
       <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-      <span class="date"><?php print format_date($node->changed, 'short'); ?></span>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>
