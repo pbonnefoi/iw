@@ -67,7 +67,7 @@
           <?php print views_embed_view('homepage_articles', 'sidebar_first'); ?>
         </section>
 
-        <section class="sidebar-content">
+<!--         <section class="sidebar-content">
           <h2 class="block__title block-title"><?php print $instagram_block['instagram_block_instagram_block']['#block']->title; ?></h2>
           <div class="view-content">
             <ul id="instagram-feed" class="clearfix">
@@ -82,7 +82,7 @@
               <?php endforeach ?>
             </ul>
           </div>
-        </section>
+        </section> -->
 
         <section class="sidebar-content">
           <?php print render($search_block); ?>
