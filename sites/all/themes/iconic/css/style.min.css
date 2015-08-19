@@ -22,3 +22,12 @@ body{background:#f0f0f0}body.is-loading *{-moz-transition:none!important;-webkit
   z-index: 100;
 }
 
+.masonry-item.masonry-type-article.views-row-1 {
+  width: 100%;
+  float: left;
+}
+
+.masonry-item.masonry-type-article, .masonry-itemmasonry-type-watch {
+  width: 49%;
+  float: left;
+}
