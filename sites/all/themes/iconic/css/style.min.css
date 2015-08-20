@@ -34,3 +34,11 @@ body{background:#f0f0f0}body.is-loading *{-moz-transition:none!important;-webkit
     border-bottom-right-radius: none !important;
     border-bottom-left-radius: none !important;
 }
+.masonry-item.masonry-type-article.views-row-1 {
+  width: 100%;
+  float: left;
+}
+.masonry-item.masonry-type-article, .masonry-itemmasonry-type-watch {
+  width: 49%;
+  float: left;
+}
