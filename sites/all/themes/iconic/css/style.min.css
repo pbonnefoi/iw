@@ -21,4 +21,16 @@ body{background:#f0f0f0}body.is-loading *{-moz-transition:none!important;-webkit
   left: 240px;
   z-index: 100;
 }
-
+#cboxContent, .cboxPhoto {
+    -webkit-border-radius: none !important;
+    -moz-border-radius: none !important;
+    border-radius: none !important;
+}
+#cboxTitle {
+    -webkit-border-bottom-right-radius: none !important;
+    -webkit-border-bottom-left-radius: none !important;
+    -moz-border-radius-bottomright: none !important;
+    -moz-border-radius-bottomleft: none !important;
+    border-bottom-right-radius: none !important;
+    border-bottom-left-radius: none !important;
+}
