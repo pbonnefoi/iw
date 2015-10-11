@@ -20,16 +20,10 @@
     <?php endif; ?>
   </header>
 
-  <div class="image featured">
+  <div class="image no-border featured">
     <a href="<?php print url('node/' . $node->nid); ?>" title="<?php print $title; ?>">
       <?php print render($content['field_image']); ?>
     </a>
   </div>
-
-  <?php print render($content['body']); ?>
-
-  <ul class="actions">
-    <li><a href="<?php print url('node/' . $node->nid); ?>" class="button icon fa-file-text"><?php print t('Learn more'); ?></a></li>
-  </ul>
 
 </article>

@@ -9,7 +9,7 @@
 ?>
 <div class="row-watches grid-view">
   <?php foreach ($rows as $id => $row): ?>
-    <div class="item watch 4u">
+    <div class="item watch 3u">
       <?php print $row; ?>
     </div>
   <?php endforeach; ?>

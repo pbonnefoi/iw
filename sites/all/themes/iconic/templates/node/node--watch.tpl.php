@@ -12,22 +12,14 @@
   <header>
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><?php print render($content['field_brand']); ?> <a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <ul class="links inline social-sharing">
-        <?php if ($display_submitted): ?>
-          <li class="date">
-            <?php print format_date($node->changed, 'short'); ?>
-          </li>
-        <?php endif; ?>
-        <li class="pinit-button">
-          <?php print render($content['links']); ?>
-        </li>
-        <li class="facebook-button">
-          <?php print render($content['facebookshare']); ?>
-        </li>
-        <li class="tweet-button">
-          <?php print render($content['field_tweet_button']); ?>
-        </li>
-      </ul>
+      <div class="links inline social-sharing icons">
+        <!-- Twitter -->
+        <a href="http://twitter.com/home?status=<?php print $node->title . ' ' . $current_url; ?>" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+         <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $current_url; ?>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+        <!-- Google+ -->
+        <a href="https://plus.google.com/share?url=<?php print $current_url; ?>" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i><span>Google+</span></a>
+      </div>
     <?php endif; ?>
     <?php if ($unpublished): ?>
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
@@ -40,8 +32,15 @@
     </div>
     <div class="5u">
       <ul class="attributes icons watch-attributes">
-        <li class="image logo desktop-only">
-          <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>
+        <li class="logovote-wrapper">
+          <ul class="logovote">
+            <li class="6u logo">
+              <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>
+            </li>
+            <li class="6u vote">
+              <?php print render($content['plus1_widget']); ?>
+            </li>
+          </ul>
         </li>
         <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
           <li class="trophy">

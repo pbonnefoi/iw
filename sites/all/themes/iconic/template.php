@@ -10,13 +10,10 @@
 function iconic_preprocess_page(&$vars) {
   $vars['main_menu'] = menu_tree_all_data('main-menu');
   $simplenews_block_info = block_load('simplenews', '22');
-  // We get the menu block based on the submenu of joaillerie
   $vars['simplenews_block'] = _block_get_renderable_array(_block_render_blocks(array($simplenews_block_info)));
   $instagram_block_info = block_load('instagram_block', 'instagram_block');
-  // We get the menu block based on the submenu of joaillerie
   $vars['instagram_block'] = _block_get_renderable_array(_block_render_blocks(array($instagram_block_info)));
   $search_block_info = block_load('search', 'form');
-  // We get the menu block based on the submenu of joaillerie
   $vars['search_block'] = _block_get_renderable_array(_block_render_blocks(array($search_block_info)));
   $award_categories_vocab = taxonomy_vocabulary_machine_name_load('award_category');
   $award_categories = taxonomy_get_tree($award_categories_vocab->vid);
@@ -66,7 +63,7 @@ function iconic_preprocess_node_watch(&$vars) {
       $vars['brand_logo'] = field_view_value('taxonomy_term', $term, 'field_logo', $logo[0], array(
         'type' => 'image',
         'settings' => array(
-          'image_style' => '120x120',
+          'image_style' => '120x100',
         ),
       ));
     }
@@ -89,45 +86,60 @@ function iconic_preprocess_node_watch(&$vars) {
 
 function iconic_preprocess_node_versus(&$vars) {
   $node = &$vars['node'];
-  $pros_left = field_get_items('node', $node, 'field_pros_left');
-  $vars['pros_left'] = array();
-  if ($pros_left) {
-    foreach ($pros_left as $key => $pl) {
-      $vars['pros_left'][] = field_view_value('node', $node, 'field_pros_left', $pl);
+  if ($vars['view_mode'] == 'teaser') {
+    $field_watch = field_get_items('node', $node, 'field_watch');
+    $watch = $field_watch[0]['entity'];
+    $picture_left = field_get_items('node', $watch, 'field_watch_picture');
+    $vars['watch_node'] = $watch;
+    $brand = field_get_items('node', $watch, 'field_brand');
+    if ($brand) {
+      $term = taxonomy_term_load($brand[0]['tid']);
+      $vars['brand_tid'] = $term->tid;
+      $vars['brand_name'] = $term->name;
+      $logo = field_get_items('taxonomy_term', $term, 'field_logo');
+      if ($logo) {
+        $vars['brand_logo'] = field_view_value('taxonomy_term', $term, 'field_logo', $logo[0], array(
+          'type' => 'image',
+          'settings' => array(
+            'image_style' => '120x100',
+          ),
+        ));
+      }
     }
-  }
-  $pros_right = field_get_items('node', $node, 'field_pros_right');
-  $vars['pros_right'] = array();
-  if ($pros_right) {
-    foreach ($pros_right as $key => $pr) {
-      $vars['pros_right'][] = field_view_value('node', $node, 'field_pros_left', $pr);
-    }
-  }
-  $cons_left = field_get_items('node', $node, 'field_cons_left');
-  $vars['cons_left'] = array();
-  if ($cons_left) {
-    foreach ($cons_left as $key => $cl) {
-      $vars['cons_left'][] = field_view_value('node', $node, 'field_pros_left', $cl);
-    }
-  }
-  $cons_right = field_get_items('node', $node, 'field_cons_right');
-  $vars['cons_right'] = array();
-  if ($cons_right) {
-    foreach ($cons_right as $key => $cr) {
-      $vars['cons_right'][] = field_view_value('node', $node, 'field_pros_left', $cr);
+    $field_versus_watch = field_get_items('node', $node, 'field_versus_watch');
+    $versus_watch = $field_versus_watch[0]['entity'];
+    $picture_right = field_get_items('node', $versus_watch, 'field_watch_picture');
+    $vars['versus_watch_node'] = $versus_watch;
+    $brand_versus = field_get_items('node', $versus_watch, 'field_brand');
+    if ($brand) {
+      $term = taxonomy_term_load($brand_versus[0]['tid']);
+      $vars['brand_versus_tid'] = $term->tid;
+      $vars['brand_versus_name'] = $term->name;
+      $logo = field_get_items('taxonomy_term', $term, 'field_logo');
+      if ($logo) {
+        $vars['brand_versus_logo'] = field_view_value('taxonomy_term', $term, 'field_logo', $logo[0], array(
+          'type' => 'image',
+          'settings' => array(
+            'image_style' => '120x100',
+          ),
+        ));
+      }
     }
   }
 }
 
 function iconic_preprocess_taxonomy_term(&$vars) {
   $term = $vars['term'];
-  if ($term->vid == variable_get('brand_vid', 3)) {
-    $vars['country'] = '';
-    $vars['city'] = '';
-    $adresse = field_get_items('taxonomy_term', $term, 'field_adresse');
-    if ($adresse) {
-      $vars['country'] = $adresse[0]['country_name'];
-      $vars['city'] = $adresse[0]['city'];
+  $vars['theme_hook_suggestions'][] = 'taxonomy_term__' . $vars['vocabulary_machine_name'] . '__' . $vars['view_mode'];
+  if ($vars['view_mode'] == 'full') {
+    if ($term->vid == variable_get('brand_vid', 3)) {
+      $vars['country'] = '';
+      $vars['city'] = '';
+      $adresse = field_get_items('taxonomy_term', $term, 'field_adresse');
+      if ($adresse) {
+        $vars['country'] = $adresse[0]['country_name'];
+        $vars['city'] = $adresse[0]['city'];
+      }
     }
   }
 }

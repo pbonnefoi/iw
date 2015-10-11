@@ -11,8 +11,8 @@
 		ignoreOrientation: true,
 		breakpoints: {
 			'global':	{ range: '*', href: '/sites/all/themes/iconic/css/style.min.css' },
-			'desktop':	{ range: '481-', href: '/sites/all/themes/iconic/css/style-desktop.min.css', containers: 1200, grid: { gutters: 50 } },
-			'1000px':	{ range: '481-1200', href: '/sites/all/themes/iconic/css/style-1000px.min.css', containers: 950, grid: { gutters: 30 }, viewportWidth: 1080 },
+			'desktop':	{ range: '481-', href: '/sites/all/themes/iconic/css/style-desktop.min.css', containers: 1200, grid: { gutters: 20 } },
+			'1000px':	{ range: '481-1200', href: '/sites/all/themes/iconic/css/style-1000px.min.css', containers: 950, grid: { gutters: 15 }, viewportWidth: 1080 },
 			'mobile':	{ range: '-480', href: '/sites/all/themes/iconic/css/style-mobile.min.css', containers: '100%', grid: { collapse: true, gutters: 10 }, lockViewport: true }
 		}
 	}, {
@@ -43,16 +43,6 @@
 	});
 
 	$(function() {
-
-		var	$window = $(window),
-			$body = $('body');
-
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
-
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-			});
 
 		// Forms (IE<10).
 			var $form = $('form');

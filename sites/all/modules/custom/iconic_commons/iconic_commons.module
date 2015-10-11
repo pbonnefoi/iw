@@ -4,6 +4,124 @@
  * Commons functions for Iconic
  */
 
+function iconic_commons_menu() {
+  $items['homepage'] = array(
+    'page callback' => 'iconic_commons_homepage_callback',
+    'access callback' => TRUE
+  );
+  return $items;
+}
+
+function iconic_commons_theme($existing, $type, $theme, $path) {
+  return array(
+    'homepage' => array(
+      'variables' => array('rows' => NULL, 'instagram_block' => NULL, 'brands_row' => NULL),
+      'template' => 'homepage',
+      'path' => drupal_get_path('module', 'iconic_commons') . '/templates',
+    ),
+  );
+}
+
+function iconic_commons_homepage_callback() {
+  $vars = array();
+  $last_article_1 = _get_last_articles_published_nodes(0, 1);
+  $last_watch_1 = _get_last_watches_published_nodes(0, 1);
+  $last_watches_2_3 = _get_last_watches_published_nodes(1, 2);
+  $last_watch_4 = _get_last_watches_published_nodes(3, 1);
+  $last_article_2 = _get_last_articles_published_nodes(1, 1);
+  $rows = array();
+  if ($last_article_1[key($last_article_1)]->created > $last_watch_1[key($last_watch_1)]->created) {
+    $rows[0][] = $last_article_1[key($last_article_1)];
+    $rows[0][] = $last_watch_1[key($last_watch_1)];
+  }
+  else {
+    $rows[0][] = $last_watch_1[key($last_watch_1)];
+    $rows[0][] = $last_article_1[key($last_article_1)];
+  }
+  $rows[1] = $last_watches_2_3;
+  if ($last_article_2[key($last_article_2)]->created > $last_watch_4[key($last_watch_4)]->created) {
+    $rows[2][] = $last_article_2[key($last_article_2)];
+    $rows[2][] = $last_watch_4[key($last_watch_4)];
+  }
+  else {
+    $rows[2][] = $last_watch_4[key($last_watch_4)];
+    $rows[2][] = $last_article_2[key($last_article_2)];
+  }
+  $vars['rows'] = $rows;
+  $instagram_block_info = block_load('instagram_block', 'instagram_block');
+  $vars['instagram_block'] = _block_get_renderable_array(_block_render_blocks(array($instagram_block_info)));
+  $last_brands = _get_last_brands_term(0, 26);
+  $last_brands_split = array_chunk($last_brands, 9);
+  $vars['brands_row'] = $last_brands_split;
+  return theme('homepage', $vars);
+}
+
+function _get_last_articles_published_nodes($start, $range) {
+  global $language;
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'article')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->propertyCondition('language', array(LANGUAGE_NONE, $language->language), 'IN')
+    ->fieldCondition('field_display_hp', 'value', 1)
+    ->propertyOrderBy('created', 'DESC')
+    ->range($start, $range)
+    ->addMetaData('account', user_load(1));
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = entity_load('node', $nids);
+  }
+
+  return $nodes;
+}
+
+function _get_last_watches_published_nodes($start, $range) {
+  global $language;
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('watch', 'versus'), 'IN')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->propertyCondition('language', array(LANGUAGE_NONE, $language->language), 'IN')
+    ->propertyOrderBy('created', 'DESC')
+    ->fieldCondition('field_display_hp', 'value', 1)
+    ->range($start, $range)
+    ->addMetaData('account', user_load(1));
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = entity_load('node', $nids);
+  }
+
+  return $nodes;
+}
+
+function _get_last_brands_term($start, $range) {
+  global $language;
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'taxonomy_term')
+    ->entityCondition('bundle', 'brand')
+    ->propertyOrderBy('name', 'ASC')
+    ->range($start, $range)
+    ->addMetaData('account', user_load(1));
+
+  $result = $query->execute();
+
+  if (isset($result['taxonomy_term'])) {
+    $tids = array_keys($result['taxonomy_term']);
+    $terms = entity_load('taxonomy_term', $tids);
+  }
+
+  return $terms;
+}
+
 function iconic_commons_entity_info_alter(&$entity_info){
   $entity_info['node']['view modes']['sidebar_teaser'] = array(
     'label' => t('Sidebar Teaser'),
@@ -29,75 +147,4 @@ function iconic_commons_entity_info_alter(&$entity_info){
     'label' => t('Entity Ref Teaser'),
     'custom settings' => TRUE,
   );
-}
-
-// function iconic_commons_form_node_form_alter(&$form, $form_state, $form_id) {
-//   if ($form_id == 'watch_node_form') {
-//     $form['#validate'][] = 'iconic_commons_auto_link_to_tag_field_validate';
-//   }
-// }
-
-// function iconic_commons_auto_link_to_tag_field_validate(&$form, $form_state) {
-//   $tag_value = '';
-//   if (isset($form['field_watch_category']['und']['#value'])) {
-//     foreach ($form['field_watch_category']['und']['#value'] as $key => $value) {
-//       $term = taxonomy_term_load($value);
-//       $form_state['values']['field_tags']['und'][] = array(
-//         'tid' => 'autocreate',
-//         'vid' => '1',
-//         'name' => $term->name,
-//         'vocabulary_machine_name' => 'tags'
-//       );
-//     }
-//   }
-//   if (isset($form['field_case']['und']['#value'])) {
-//     foreach ($form['field_case']['und']['#value'] as $key => $value) {
-//       $term = taxonomy_term_load($value);
-//       $form_state['values']['field_tags']['und'][] = array(
-//         'tid' => 'autocreate',
-//         'vid' => '1',
-//         'name' => $term->name,
-//         'vocabulary_machine_name' => 'tags'
-//       );
-//     }
-//   }
-//   if (isset($form['field_award_category']['und']['#value']) && $form['field_award_category']['und']['#value'] != '_none') {
-//     $form_state['values']['field_tags']['und'][] = array(
-//       'tid' => 'autocreate',
-//       'vid' => '1',
-//       'name' => $form['field_award_category']['und']['#value'],
-//       'vocabulary_machine_name' => 'tags'
-//     );
-//   }
-//   $form_state['values']['field_tags']['und'][] = array(
-//     'tid' => 'autocreate',
-//     'vid' => '1',
-//     'name' => $form['field_award_category']['und']['#value'],
-//     'vocabulary_machine_name' => 'tags'
-//   );
-// }
-
-function iconic_commons_form_alter(&$form, $form_state, $form_id) {
-  if (in_array($form_id, array('poll_view_voting', 'poll_cancel_form'))) {
-    $form['#prefix'] = '<div id="iconic-commons-votes">';
-    $form['#suffix'] = '</div>';
-    $form['vote']['#ajax'] = array(
-      'callback' => 'iconic_commons_poll_vote_js',
-      'wrapper' => 'iconic-commons-votes',
-      'method' => 'replace',
-      'effect' => 'fade',
-    );
-    $form['vote']['#ajax']['progress']['type'] = 'none';
-  }
-  elseif ($form_id == 'simplenews_block_form_22') {
-    if (isset($form['mail']['#title'])) {
-      $form['mail']['#attributes']['placeholder'] = $form['mail']['#title'];
-    }
-    $form['mail']['#title_display'] = 'invisible';
-  }
-}
-
-function iconic_commons_poll_vote_js($form, $form_state) {
-  $results = poll_view_results($form['#node'], 'full', $block = FALSE);
-  return $results;
 }

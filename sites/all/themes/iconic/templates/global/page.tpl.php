@@ -53,7 +53,7 @@
     <div class="row">
 
       <!-- Content -->
-      <div id="content" class="8u">
+      <div id="content" class="<?php print drupal_is_front_page() ? '12u' : '8u' ?>">
         <?php print render($page['content']); ?>
         <?php if ($view_to_render): ?>
           <?php print views_embed_view($view_to_render, 'block'); ?>
@@ -61,60 +61,49 @@
       </div>
 
       <!-- Sidebar -->
-      <div id="sidebar" class="4u">
+      <?php if (!drupal_is_front_page()): ?>
+        <div id="sidebar" class="4u">
 
-        <section class="sidebar-content desktop-only">
-          <?php print views_embed_view('homepage_articles', 'sidebar_first'); ?>
-        </section>
+          <section class="sidebar-content desktop-only">
+            <?php print views_embed_view('homepage_articles', 'sidebar_first'); ?>
+          </section>
 
-<!--         <section class="sidebar-content">
-          <h2 class="block__title block-title"><?php print $instagram_block['instagram_block_instagram_block']['#block']->title; ?></h2>
-          <div class="view-content">
-            <ul id="instagram-feed" class="clearfix">
-              <?php foreach ($instagram_block['instagram_block_instagram_block']['children'] as $key => $instagram_block_image): ?>
-                <li class="4u">
-                  <div class="image">
-                    <a class="group" target="blank_" rel="group1" href="<?php print $instagram_block_image['#href']; ?>">
-                      <img style="float: left; margin: 0 5px 5px 0px; width: <?php print $instagram_block_image['#width']; ?>px; height: <?php print $instagram_block_image['#height']; ?>px;" src="<?php print $instagram_block_image['#src']; ?>">
-                    </a>
-                  </div>
-                </li>
-              <?php endforeach ?>
-            </ul>
-          </div>
-        </section> -->
+          <section class="sidebar-content">
+            <h2 class="block__title block-title"><?php print $instagram_block['instagram_block_instagram_block']['#block']->title; ?></h2>
+            <div class="view-content">
+              <ul id="instagram-feed" class="clearfix">
+                <?php foreach ($instagram_block['instagram_block_instagram_block']['children'] as $key => $instagram_block_image): ?>
+                  <li class="4u">
+                    <div class="image">
+                      <a class="group" target="blank_" rel="group1" href="<?php print $instagram_block_image['#href']; ?>">
+                        <img style="float: left; margin: 0 5px 5px 0px; width: <?php print $instagram_block_image['#width']; ?>px; height: <?php print $instagram_block_image['#height']; ?>px;" src="<?php print $instagram_block_image['#src']; ?>">
+                      </a>
+                    </div>
+                  </li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </section>
 
-        <section class="sidebar-content">
-          <?php print render($search_block); ?>
-        </section>
+          <section class="sidebar-content">
+            <?php print render($search_block); ?>
+          </section>
 
-        <section class="ad">
-          <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12'), array('absolute' => TRUE)); ?></p>
-        </section>
+          <section class="sidebar-content">
+            <?php print views_embed_view('brands', 'block'); ?>
+          </section>
 
-        <section class="sidebar-content">
-          <?php print views_embed_view('brands', 'block'); ?>
-        </section>
+          <section class="sidebar-content">
+            <?php print render($simplenews_block); ?>
+          </section>
 
-        <section class="sidebar-content">
-          <?php print render($simplenews_block); ?>
-        </section>
-
-      </div>
+        </div>
+      <?php endif ?>
 
     </div>
     <?php print $feed_icons; ?>
   </div>
 
-</div>
-
-<!-- Banner -->
-<div id="banner-wrapper">
-  <div class="inner">
-    <section id="banner" class="container">
-      <p><?php print t('This space is available for a big ad.') . ' ' . l(t('Contact us'), url('node/12'), array('absolute' => TRUE)); ?></p>
-    </section>
-  </div>
 </div>
 
 <!-- Footer -->

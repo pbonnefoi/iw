@@ -14,15 +14,12 @@
 </div>
 <div class="grid-roll-wrapper">
   <div class="grid-roll<?php print $class; ?>">
-    <div class="brand">
-      <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>">
-        <?php print render($brand_logo); ?>
-      </a>
-    </div>
     <div class="captions">
+      <?php print render($content['field_brand']); ?><br />
       <a href="<?php print url('node/' . $node->nid); ?>">
-        <h3 class="grid-title"><?php print $title; ?></h3>
+        <h3 class="grid-title"><?php print $node->title; ?></h3>
       </a>
+      <?php print render($content['field_watch_reference']); ?>
     </div>
     <span class="grid-learn-more">
       <a href="<?php print url('node/' . $node->nid); ?>">
