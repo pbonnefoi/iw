@@ -65,9 +65,11 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($pager): ?>
-    <?php print $pager; ?>
-  <?php endif; ?>
+  <div class="load-more-watches">
+    <?php if ($pager): ?>
+      <?php print $pager; ?>
+    <?php endif; ?>
+  </div>
 
   <?php if ($attachment_after): ?>
     <div class="attachment attachment-after">

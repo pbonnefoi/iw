@@ -8,6 +8,7 @@
  */
 
 function iconic_preprocess_page(&$vars) {
+  $arg = arg();
   $vars['main_menu'] = menu_tree_all_data('main-menu');
   $simplenews_block_info = block_load('simplenews', '22');
   $vars['simplenews_block'] = _block_get_renderable_array(_block_render_blocks(array($simplenews_block_info)));
@@ -26,6 +27,12 @@ function iconic_preprocess_page(&$vars) {
   $node = menu_get_object();
   if (drupal_is_front_page() || (isset($node->type) && ($node->type == 'watch' || $node->type == 'article'))) {
     $vars['view_to_render'] = 'watches';
+  }
+  $vars['display_sidebar'] = TRUE;
+  $vars['main_width'] = '8u';
+  if (drupal_is_front_page() || (count($arg) == 1 && $arg[0] == 'watches')) {
+    $vars['display_sidebar'] = FALSE;
+    $vars['main_width'] = '12u';
   }
 }
 

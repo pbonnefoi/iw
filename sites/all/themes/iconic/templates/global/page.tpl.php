@@ -6,6 +6,7 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728148
  */
+$arg = arg();
 ?>
 <!-- Header -->
 <div id="header-wrapper">
@@ -53,7 +54,7 @@
     <div class="row">
 
       <!-- Content -->
-      <div id="content" class="<?php print drupal_is_front_page() ? '12u' : '8u' ?>">
+      <div id="content" class="<?php print $main_width; ?>">
         <?php print render($page['content']); ?>
         <?php if ($view_to_render): ?>
           <?php print views_embed_view($view_to_render, 'block'); ?>
@@ -61,12 +62,8 @@
       </div>
 
       <!-- Sidebar -->
-      <?php if (!drupal_is_front_page()): ?>
+      <?php if ($display_sidebar): ?>
         <div id="sidebar" class="4u">
-
-          <section class="sidebar-content desktop-only">
-            <?php print views_embed_view('homepage_articles', 'sidebar_first'); ?>
-          </section>
 
           <section class="sidebar-content">
             <h2 class="block__title block-title"><?php print $instagram_block['instagram_block_instagram_block']['#block']->title; ?></h2>

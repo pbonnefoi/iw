@@ -1150,13 +1150,6 @@ div.plus1-widget .plus1-score {
 div.plus1-widget .plus1-vote a, div.plus1-widget .plus1-undo-vote a {
   border: none;
 }
-.iwlike {
-  background: url(/sites/all/themes/iconic/images/heart.png) center no-repeat;
-  max-width: 148px;
-  max-height: 148px;
-  padding: 0 !important;
-  vertical-align: top;
-}
 article.node-article header {
   margin-bottom: 20px;
 }
@@ -1314,4 +1307,20 @@ article.node-versus.node-teaser .grid-view .picture-right .grid-roll {
 }
 ul.icons>li.logovote-wrapper, ul.icons li.vote {
   padding: 0;
+}
+.social-sharing.icons, .watch-attributes-wrapper {
+  padding-top: 13px;
+}
+.load-more-watches .item-list {
+  display: flex;
+}
+.load-more-watches .item-list .pager-load-more {
+  margin: auto;
+}
+.ajax-progress .throbber {
+  background: transparent url(/images/throbber.gif) no-repeat 0px -18px;
+  float: left; /* LTR */
+  height: 15px;
+  margin: 2px;
+  width: 15px;
 }
