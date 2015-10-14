@@ -64,7 +64,7 @@
         <?php endif ?>
       </ul>
     </div>
-    <div class="watch-description">
+    <div class="watch-description 12u">
       <?php if (isset($content['field_watch_description']) && $content['field_watch_description']): ?>
         <?php print render($content['field_watch_description']); ?>
       <?php endif; ?>

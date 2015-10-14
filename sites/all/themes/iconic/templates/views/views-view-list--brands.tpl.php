@@ -11,6 +11,6 @@
 ?>
 <ul id="brands" class="clearfix">
   <?php foreach ($rows as $id => $row): ?>
-    <li class="3u"><?php print $row; ?></li>
+    <li class="<?php print drupal_is_front_page() ? '3u' : '4u'; ?>"><?php print $row; ?></li>
   <?php endforeach; ?>
 </ul>

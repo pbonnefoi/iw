@@ -294,13 +294,14 @@ ul.icons>li:before {
 }
 .trophy {
     margin-top: .5em!important;
-    padding: 0!important
+    padding: 10px;
 }
 .trophy span {
     position: relative;
     padding: 2em 0 0 2em;
     border: none;
-    color: #e4e4e4
+    color: #e4e4e4;
+    font-size: 13px;
 }
 .trophy span:before {
     position: absolute;
@@ -313,20 +314,21 @@ ul.icons>li:before {
     border-radius: 1.65em;
     line-height: 1.65em;
     text-align: center;
-    box-shadow: .125em .175em 0 0 rgba(0, 0, 0, .125)
+    box-shadow: .125em .175em 0 0 rgba(0, 0, 0, .125);
 }
 .trophy .trophy-name,
 .trophy span.date-display-single {
-    background: #b78727;
-    font-weight: 400;
-    text-transform: uppercase;
-    border-radius: 28px;
-    border: 0;
-    box-shadow: .125em .175em 0 0 rgba(0, 0, 0, .125);
-    letter-spacing: 2px;
-    padding: .1em .5em;
-    top: 4px;
-    margin-right: 2px
+  background: #b78727;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 28px;
+  border: 0;
+  box-shadow: .125em .175em 0 0 rgba(0, 0, 0, .125);
+  letter-spacing: 2px;
+  padding: .2em .6em;
+  top: 4px;
+  margin-right: 2px;
+  font-size: 15px;
 }
 ul.icons>li:first-child {
     padding-top: 0
@@ -746,7 +748,6 @@ ul.icons li.logo {
     font-weight: 400;
     letter-spacing: 4px;
     margin: 0 0 1.5em;
-    line-height: 1.75em
 }
 li.twitter:before {
     background: #55acee!important
@@ -1144,7 +1145,7 @@ div.plus1-widget {
   height: 100% !important;
 }
 div.plus1-widget .plus1-score {
-  padding: 0.5em 0 0.5em 0 !important;
+  padding: 1.3em 0 0.5em 0 !important;
   color: #dddddd;
 }
 div.plus1-widget .plus1-vote a, div.plus1-widget .plus1-undo-vote a {
@@ -1153,14 +1154,14 @@ div.plus1-widget .plus1-vote a, div.plus1-widget .plus1-undo-vote a {
 article.node-article header {
   margin-bottom: 20px;
 }
-article.node-watch ul.logovote {
+ul.logovote {
   display: flex;
 }
-article.node-watch li.logo,
-article.node-watch li.vote,
-article.node-versus.node-teaser li.logo {
+li.logo,
+li.vote {
   float: left;
   text-align: center;
+  max-height: 100px;
 }
 article.node-watch .image.image-watch,
 article.node-versus.node-teaser .image.image-watch {
@@ -1223,6 +1224,11 @@ li.vote .plus1-widget a {
 }
 .grid-roll-wrapper .grid-roll .captions {
   margin: auto;
+  font-size: 13pt;
+}
+.grid-roll-wrapper .grid-roll .captions span.trophy {
+  font-size: 40pt;
+  color: #b78727;
 }
 .grid-roll-wrapper .grid-roll .captions a {
   font-size: 1.5em;
@@ -1309,7 +1315,7 @@ ul.icons>li.logovote-wrapper, ul.icons li.vote {
   padding: 0;
 }
 .social-sharing.icons, .watch-attributes-wrapper {
-  padding-top: 13px;
+  padding-bottom: 10px;
 }
 .load-more-watches .item-list {
   display: flex;
@@ -1317,10 +1323,57 @@ ul.icons>li.logovote-wrapper, ul.icons li.vote {
 .load-more-watches .item-list .pager-load-more {
   margin: auto;
 }
-.ajax-progress .throbber {
-  background: transparent url(/images/throbber.gif) no-repeat 0px -18px;
+.ajax-progress-throbber {
+  background: transparent url(/images/throbber.gif) no-repeat 0px -18px !important;
   float: left; /* LTR */
   height: 15px;
   margin: 2px;
   width: 15px;
+}
+ul.logovote>li.vote {
+  position: relative;
+  font-size: 20px;
+}
+div.plus1-widget .plus1-vote a, div.plus1-widget .plus1-undo-vote a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 25px;
+  font-size: 100% !important;
+}
+.show-more-watches {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: #666;
+  text-align: center;
+}
+
+.show-more-watches a {
+  text-decoration: none;
+  color: #dddddd;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 3px;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0;
+  padding: 20px;
+  display: block;
+}
+
+.show-more-watches a:hover {
+  text-decoration: underline;
+  color: #666;
+  background: #ddd;
+}
+ul.versus-wrapper {
+  margin: 0;
+}
+.watch-description img {
+  width: 100%;
+}
+.view-awards .row-watches {
+  padding-bottom: 20px;
 }

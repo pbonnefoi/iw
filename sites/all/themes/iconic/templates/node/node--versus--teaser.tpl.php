@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <ul>
+  <ul class="versus-wrapper">
     <?php if ($brand_tid == $brand_versus_tid): ?>
       <li class="12u logo">
         <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>

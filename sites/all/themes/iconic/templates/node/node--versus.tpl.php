@@ -11,17 +11,6 @@
   <header>
     <?php if ($title): ?>
       <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <ul class="links inline social-sharing">
-        <li class="pinit-button">
-          <?php print render($content['links']); ?>
-        </li>
-        <li class="facebook-button">
-          <?php print render($content['facebookshare']); ?>
-        </li>
-        <li class="tweet-button">
-          <?php print render($content['field_tweet_button']); ?>
-        </li>
-      </ul>
     <?php endif; ?>
     <?php if ($unpublished): ?>
       <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
@@ -35,41 +24,10 @@
 
   <div class="6u versus-left">
     <?php print render($content['field_watch']); ?>
-    <?php if ($pros_left): ?>
-      <ul class="icons">
-        <?php foreach ($pros_left as $key => $pl): ?>
-          <li class="icon fa-plus"><?php print render($pl); ?></li>
-        <?php endforeach ?>
-      </ul>
-    <?php endif ?>
-    <?php if ($cons_left): ?>
-      <ul class="icons">
-        <?php foreach ($cons_left as $key => $cl): ?>
-          <li class="icon fa-minus"><?php print render($cl); ?></li>
-        <?php endforeach ?>
-      </ul>
-    <?php endif ?>
   </div>
 
   <div class="6u versus-right">
     <?php print render($content['field_versus_watch']); ?>
-    <?php if ($pros_right): ?>
-      <ul class="icons">
-        <?php foreach ($pros_right as $key => $pr): ?>
-          <li class="icon fa-plus"><?php print render($pr); ?></li>
-        <?php endforeach ?>
-      </ul>
-    <?php endif ?>
-    <?php if ($cons_right): ?>
-      <ul class="icons">
-        <?php foreach ($cons_right as $key => $cr): ?>
-          <li class="icon fa-minus"><?php print render($cr); ?></li>
-        <?php endforeach ?>
-      </ul>
-    <?php endif ?>
   </div>
 
 </div>
-
-<?php print render($content['field_versus_poll']); ?>
-

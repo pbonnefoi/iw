@@ -23,6 +23,10 @@
             <a href="<?php print url('node/' . $node->nid); ?>">
               <h3 class="grid-title"><?php print $title; ?></h3>
             </a>
+            <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
+              <span class="trophy icon <?php print render($font_awsome_icon); ?>"></span>
+              <span class="trophy icon fa-trophy"></span><br />
+            <?php endif ?>
             <?php print render($content['field_watch_reference']); ?>
           </div>
           <span class="grid-learn-more">

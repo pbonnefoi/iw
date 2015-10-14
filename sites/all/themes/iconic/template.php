@@ -54,7 +54,7 @@ function iconic_preprocess_node_article(&$vars) {
   $watches = field_get_items('node', $node, 'field_watch');
   $vars['watches'] = array();
   foreach ($watches as $key => $watch) {
-    $vars['watches'][] = node_view(node_load($watch['target_id']), 'entity_ref_teaser');
+    $vars['watches'][] = node_view(node_load($watch['target_id']), 'view_teaser');
   }
 }
 
