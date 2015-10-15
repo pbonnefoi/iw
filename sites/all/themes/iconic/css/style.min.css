@@ -50,7 +50,7 @@ h6 a {
     border: 0
 }
 a {
-    color: #666;
+    color: #777776;
     text-decoration: none;
     border-bottom: solid 1px #ddd;
     -moz-transition: color .25s ease-in-out, border-bottom-color .25s ease-in-out;
@@ -76,7 +76,7 @@ a:hover strong {
 b,
 strong {
     font-weight: 600;
-    color: #666
+    color: #777776
 }
 em,
 i {
@@ -827,7 +827,7 @@ li.instagram:before {
 .form-checkboxes .form-type-checkbox input[type=checkbox]:checked+label,
 .form-radios .form-type-radio input[type=radio]:checked+label {
     background-position: 1em -73px;
-    color: #666
+    color: #777776
 }
 .webform-client-form .row+.row>* {
     padding: 0 0 0 50px
@@ -1172,7 +1172,7 @@ li.logo a {
 }
 li.vote {
   display: inline-flex;
-  background: #666;
+  background: #777776;
 }
 li.vote .plus1-widget {
   margin: auto 5px;
@@ -1204,7 +1204,7 @@ li.vote .plus1-widget a {
 }
 #brands ul.last li.last {
   display: inline-flex;
-  background: #666;
+  background: #777776;
   margin-bottom: 8px;
 }
 #brands ul.last li.last a {
@@ -1324,7 +1324,7 @@ ul.icons>li.logovote-wrapper, ul.icons li.vote {
   margin: auto;
 }
 .ajax-progress-throbber {
-  background: transparent url(/images/throbber.gif) no-repeat 0px -18px !important;
+  background: transparent url(images/throbber.gif) no-repeat 0px -18px !important;
   float: left; /* LTR */
   height: 15px;
   margin: 2px;
@@ -1345,7 +1345,7 @@ div.plus1-widget .plus1-vote a, div.plus1-widget .plus1-undo-vote a {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
-  background: #666;
+  background: #777776;
   text-align: center;
 }
 
@@ -1365,7 +1365,7 @@ div.plus1-widget .plus1-vote a, div.plus1-widget .plus1-undo-vote a {
 
 .show-more-watches a:hover {
   text-decoration: underline;
-  color: #666;
+  color: #777776;
   background: #ddd;
 }
 ul.versus-wrapper {
@@ -1376,4 +1376,31 @@ ul.versus-wrapper {
 }
 .view-awards .row-watches {
   padding-bottom: 20px;
+}
+.views-exposed-form .views-exposed-widget {
+  float: none;
+  width: 100%;
+}
+.views-exposed-form .form-item, .views-exposed-form .form-submit {
+  float: left;
+  margin-right: 15px;
+}
+.views-exposed-form label {
+  border-bottom: 1px #ebebeb solid;
+  margin-bottom: 10px !important;
+}
+.views-exposed-form a {
+  margin-bottom: 10px !important;
+  font-size: 10pt;
+  border-bottom: 0;
+  background: transparent url(images/checkbox.gif) no-repeat scroll -10px -57px;
+  clear: both;
+  display: block;
+  float: left;
+  padding: 1px 0 1px 15px;
+  line-height: normal;
+}
+.views-exposed-form a.active, .views-exposed-form a:hover {
+  background-position: -50px -17px;
+  color: #666;
 }
