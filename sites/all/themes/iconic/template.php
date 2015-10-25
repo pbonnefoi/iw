@@ -23,16 +23,23 @@ function iconic_preprocess_page(&$vars) {
     $term = taxonomy_term_load($category->tid);
     $vars['award_categories'][] = taxonomy_term_load($category->tid);
   }
-  $vars['view_to_render'] = '';
   $node = menu_get_object();
-  if (drupal_is_front_page() || (isset($node->type) && ($node->type == 'watch' || $node->type == 'article'))) {
-    $vars['view_to_render'] = 'watches';
-  }
   $vars['display_sidebar'] = TRUE;
   $vars['main_width'] = '8u';
   if (drupal_is_front_page() || (count($arg) == 1 && $arg[0] == 'watches')) {
     $vars['display_sidebar'] = FALSE;
     $vars['main_width'] = '12u';
+  }
+  $vars['view_to_render'] = '';
+  if (drupal_is_front_page()) {
+    $vars['view_to_render'] = 'watches';
+  }
+  $vars['last_articles'] = _get_last_articles_published_nodes(0, 2);
+  $last_watches = _get_last_watches_published_nodes(0, 9, array('watch'));
+  foreach ($last_watches as $key => $last_watche) {
+    $watches_image = field_get_items('node', $last_watche, 'field_watch_picture');
+    $vars['last_watches'][$key]['image'] = image_style_url('120x120', $watches_image[0]['uri']);
+    $vars['last_watches'][$key]['node'] = $last_watche;
   }
 }
 
@@ -88,6 +95,12 @@ function iconic_preprocess_node_watch(&$vars) {
   $vars['class'] = '';
   if (isset($vars['field_award_category']) && $vars['field_award_category']){
     $vars['class'] = ' awarded';
+  }
+  if ($vars['view_mode'] == 'full') {
+    $related_articles = _get_articles_related_to_watches($node->nid);
+    if ($related_articles) {
+      $vars['related_articles'] = $related_articles;
+    }
   }
 }
 
@@ -310,4 +323,15 @@ function iconic_links__node($vars) {
   }
 
   return $output;
+}
+
+function _get_articles_related_to_watches($nid) {
+  $query = db_select('field_data_field_watch', 'w');
+  $query->fields('w', array('entity_id'));
+  $query->condition('w.field_watch_target_id', $nid);
+  $query->condition('w.bundle', 'article');
+  $result = $query->execute();
+  $records = $result->fetchAll();
+
+  return $records;
 }

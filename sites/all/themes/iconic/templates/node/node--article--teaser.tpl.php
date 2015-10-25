@@ -12,7 +12,7 @@
 
   <header>
     <?php if ($title): ?>
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" titl="<?php print $title; ?>"><?php print $title; ?></a></h2>
+      <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" titl="<?php print $title; ?>"><?php print $title; ?></a></h3>
     <?php endif; ?>
 
     <?php if ($unpublished): ?>

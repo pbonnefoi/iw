@@ -85,12 +85,12 @@ function _get_last_articles_published_nodes($start, $range) {
   return $nodes;
 }
 
-function _get_last_watches_published_nodes($start, $range) {
+function _get_last_watches_published_nodes($start, $range, $bundle = array('watch', 'versus')) {
   global $language;
   $query = new EntityFieldQuery();
 
   $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', array('watch', 'versus'), 'IN')
+    ->entityCondition('bundle', $bundle, 'IN')
     ->propertyCondition('status', NODE_PUBLISHED)
     ->propertyCondition('language', array(LANGUAGE_NONE, $language->language), 'IN')
     ->propertyOrderBy('created', 'DESC')

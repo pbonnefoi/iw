@@ -26,43 +26,45 @@
     <?php endif; ?>
   </header>
 
-  <div class="watch-attributes-wrapper row">
-    <div class="7u">
-      <span class="image featured image-watch"><?php print render($content['field_watch_picture']); ?></span>
-    </div>
-    <div class="5u">
-      <ul class="attributes icons watch-attributes">
-        <li class="logovote-wrapper">
-          <ul class="logovote">
-            <li class="6u logo">
-              <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>
-            </li>
-            <li class="6u vote">
-              <?php print render($content['plus1_widget']); ?>
-            </li>
-          </ul>
-        </li>
-        <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
-          <li class="trophy">
-            <span class="icon trophy-name"><?php print $award_category_name; ?></span>
-            <span class="icon fa-trophy"></span>
-            <?php print render($content['field_date_award']); ?>
+  <div class="watch-attributes-wrapper">
+    <div class="watch-image-attributes-wrapper row">
+      <div class="7u">
+        <span class="image featured image-watch"><?php print render($content['field_watch_picture']); ?></span>
+      </div>
+      <div class="5u">
+        <ul class="attributes icons watch-attributes">
+          <li class="logovote-wrapper">
+            <ul class="logovote">
+              <li class="6u logo">
+                <a href="<?php print url('taxonomy/term/' . $brand_tid); ?>"><?php print render($brand_logo); ?></a>
+              </li>
+              <li class="6u vote">
+                <?php print render($content['plus1_widget']); ?>
+              </li>
+            </ul>
           </li>
-        <?php endif ?>
-        <li class="icon fa-tag"><span><?php print t('Reference') ?> : </span><?php print render($content['field_watch_reference']); ?></li>
-        <li class="icon fa-cog"><span><?php print t('Caliber') ?> : </span><?php print render($content['field_caliber']); ?></li>
-        <li class="icon fa-arrows-h"><span><?php print t('Diameter') ?> : </span><?php print render($content['field_diameter']); ?></li>
-        <?php if (isset($content['field_water_resistant']) && $content['field_water_resistant']): ?>
-          <li class="icon fa-tint"><span><?php print t('Water Resistant') ?> : </span><?php print render($content['field_water_resistant']); ?></li>
-        <?php endif ?>
-        <li class="icon fa-calendar"><span><?php print t('Production Date') ?> : </span><?php print render($content['field_production_year']); ?></li>
-        <?php if (isset($content['field_price_new']) && $content['field_price_new']): ?>
-          <li class="icon fa-money"><span><?php print t('Price new') ?> : </span><?php print render($content['field_price_new']); ?>€</li>
-        <?php endif ?>
-        <?php if (isset($content['field_price_used_low']) && $content['field_price_used_low']): ?>
-          <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_used_low']); ?>€ / <?php print render($content['field_price_used_high']); ?>€</li>
-        <?php endif ?>
-      </ul>
+          <?php if (isset($content['field_award_category']) && $content['field_award_category']): ?>
+            <li class="trophy">
+              <span class="icon trophy-name"><?php print $award_category_name; ?></span>
+              <span class="icon fa-trophy"></span>
+              <?php print render($content['field_date_award']); ?>
+            </li>
+          <?php endif ?>
+          <li class="icon fa-tag"><span><?php print t('Reference') ?> : </span><?php print render($content['field_watch_reference']); ?></li>
+          <li class="icon fa-cog"><span><?php print t('Caliber') ?> : </span><?php print render($content['field_caliber']); ?></li>
+          <li class="icon fa-arrows-h"><span><?php print t('Diameter') ?> : </span><?php print render($content['field_diameter']); ?></li>
+          <?php if (isset($content['field_water_resistant']) && $content['field_water_resistant']): ?>
+            <li class="icon fa-tint"><span><?php print t('Water Resistant') ?> : </span><?php print render($content['field_water_resistant']); ?></li>
+          <?php endif ?>
+          <li class="icon fa-calendar"><span><?php print t('Production Date') ?> : </span><?php print render($content['field_production_year']); ?></li>
+          <?php if (isset($content['field_price_new']) && $content['field_price_new']): ?>
+            <li class="icon fa-money"><span><?php print t('Price new') ?> : </span><?php print render($content['field_price_new']); ?>€</li>
+          <?php endif ?>
+          <?php if (isset($content['field_price_used_low']) && $content['field_price_used_low']): ?>
+            <li class="icon fa-money"><span><?php print t('Price used') ?> : </span><?php print render($content['field_price_used_low']); ?>€ / <?php print render($content['field_price_used_high']); ?>€</li>
+          <?php endif ?>
+        </ul>
+      </div>
     </div>
     <div class="watch-description 12u">
       <?php if (isset($content['field_watch_description']) && $content['field_watch_description']): ?>
@@ -78,6 +80,16 @@
           <div class="image featured">
             <?php print render($content['field_more_images'][$key_image]); ?>
           </div>
+        </div>
+      <?php endforeach ?>
+    </div>
+  <?php endif ?>
+
+  <?php if (isset($related_articles) && $related_articles): ?>
+    <div class="row related-articles">
+      <?php foreach ($related_articles as $key_article => $article): ?>
+        <div class="6u">
+          <?php print render(node_view(node_load($article->entity_id), 'teaser')); ?>
         </div>
       <?php endforeach ?>
     </div>

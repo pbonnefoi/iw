@@ -65,6 +65,30 @@ $arg = arg();
       <?php if ($display_sidebar): ?>
         <div id="sidebar" class="4u">
 
+          <section class="sidebar-content last-articles">
+            <h2 class="block__title block-title"><?php print t('Last articles'); ?></h2>
+            <?php foreach ($last_articles as $key => $last_article): ?>
+              <?php print render(node_view($last_article, 'teaser')); ?>
+            <?php endforeach ?>
+          </section>
+
+          <section class="sidebar-content last-watches">
+            <h2 class="block__title block-title"><?php print t('Last watches'); ?></h2>
+            <div class="view-content">
+              <ul id="sidebar-last-watches" class="clearfix">
+                <?php foreach ($last_watches as $key => $last_watche): ?>
+                  <li class="4u">
+                    <div class="image">
+                      <a class="group" href="<?php print url('node/' . $last_watche['node']->nid); ?>">
+                        <img style="float: left; margin: 0 5px 5px 0px;" src="<?php print $last_watche['image']; ?>">
+                      </a>
+                    </div>
+                  </li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </section>
+
           <section class="sidebar-content">
             <h2 class="block__title block-title"><?php print $instagram_block['instagram_block_instagram_block']['#block']->title; ?></h2>
             <div class="view-content">
@@ -87,6 +111,7 @@ $arg = arg();
           </section>
 
           <section class="sidebar-content">
+            <h2 class="block__title block-title"><?php print t('Brands'); ?></h2>
             <?php print views_embed_view('brands', 'block'); ?>
           </section>
 
